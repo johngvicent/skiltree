@@ -1,24 +1,90 @@
 ---
-interface Props {
-  message?: string;
-}
-
-const { 
-  message = "💡 Haz clic en los nodos para expandir/contraer | Los enlaces externos se abren en nueva pestaña" 
-} = Astro.props;
+// Footer con estadísticas del sitio
 ---
 
 <footer>
-  <p>{message}</p>
+  <div class="stats-container">
+    <div class="stat-item">
+      <p class="stat-number">500+</p>
+      <p class="stat-label">Recursos</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">24</p>
+      <p class="stat-label">Categorías</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">100%</p>
+      <p class="stat-label">Gratuitos</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2024 SkillTree. Built for lifelong learners.</p>
+  </div>
 </footer>
 
 <style>
   footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    color: #666;
-    font-size: 0.9em;
+    margin-top: 3rem;
+    padding: 2.5rem 0;
     border-top: 1px solid #333;
+  }
+
+  .stats-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    min-width: 120px;
+  }
+
+  .stat-number {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .stat-label {
+    color: #64748b;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-top: 0.25rem;
+  }
+
+  .copyright {
+    margin-top: 3rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .copyright p {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .stats-container {
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+    }
   }
 </style>
