@@ -1,0 +1,85 @@
+---
+interface Props {
+  text: string;
+  variant?: 'pulse' | 'default';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+  target?: '_blank' | '_self';
+}
+
+const {
+  text,
+  variant = 'pulse',
+  href,
+  type = 'button',
+  class: className = '',
+  target = '_self'
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+const additionalProps = href 
+  ? { href, target, rel: target === '_blank' ? 'noopener noreferrer' : undefined }
+  : { type };
+---
+
+<Tag class={`btn ${variant} ${className}`} {...additionalProps}>
+  {text}
+</Tag>
+
+<style>
+  .btn {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: var(--color);
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    border-color: var(--hover);
+    color: #fff;
+    outline: none;
+  }
+
+  /* Pulse variant */
+  .pulse {
+    --color: #00d4ff;
+    --hover: #00ffdd;
+  }
+
+  .pulse:hover,
+  .pulse:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--hover);
+    }
+  }
+
+  /* Default variant */
+  .default {
+    --color: #e0e0e0;
+    --hover: #00d4ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .btn {
+      padding: 0.8em 1.6em;
+      font-size: 0.9rem;
+    }
+  }
+</style>

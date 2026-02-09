@@ -1,0 +1,202 @@
+---
+import Button from './Button.astro';
+
+// Footer con estadísticas del sitio
+interface Props {
+  linkedInUrls?: {
+    johnVicent?: string;
+    pedroVial?: string;
+    luisCervello?: string;
+  };
+}
+
+const { 
+  linkedInUrls = {
+    johnVicent: "https://www.linkedin.com/in/johngonzalezvicent/",
+    pedroVial: "https://www.linkedin.com/in/pedro-vial/",
+    luisCervello: "https://www.linkedin.com/in/luis-cervell%C3%B3-mediel-a959b3364/"
+  }
+} = Astro.props;
+---
+
+<div class="scrum-header">
+    <h2>Esta App está desarrollada mediante el Método Scrum</h2>
+    <h3>Equipo Scrum</h3>
+    <p>El equipo Scrum está compuesto por un Product Owner, un Scrum Master y un equipo de desarrollo. El Product Owner es responsable de definir las características del producto y priorizar el trabajo. El Scrum Master facilita el proceso Scrum y ayuda al equipo a superar obstáculos. El equipo de desarrollo es responsable de entregar el producto incrementado en cada sprint.</p>
+</div>
+<div class="scrum-team">
+    <details class="scrum-team-card">
+        <summary>
+            <h3>Pedro Vial</h3>
+            <span class="role">Product Owner</span>
+        </summary>
+        <div class="card-content">
+            <img src="/pedro-vial.jpg" alt="Pedro Vial">
+            <p>Responsable de maximizar el valor del producto y gestionar el Product Backlog. Define las características del producto y prioriza el trabajo del equipo.</p>
+            <Button text="Ver perfil de LinkedIn" variant="pulse" href={linkedInUrls.pedroVial} target="_blank" />
+        </div>
+    </details>
+    <details class="scrum-team-card">
+        <summary>
+            <h3>Luis Cervelló</h3>
+            <span class="role">Scrum Master</span>
+        </summary>
+        <div class="card-content">
+            <img src="/luis-cervello.jpg" alt="Luis Cervelló">
+            <p>Facilita el proceso Scrum y ayuda al equipo a superar obstáculos. Asegura que se sigan las prácticas ágiles y protege al equipo de interrupciones externas.</p>
+            <Button text="Ver perfil de LinkedIn" variant="pulse" href={linkedInUrls.luisCervello} target="_blank" />
+        </div>
+    </details>
+    <details class="scrum-team-card">
+        <summary>
+            <h3>John Vicent</h3>
+            <span class="role">Desarrollador</span>
+        </summary>
+        <div class="card-content">
+            <img src="/john-vicent.jpg" alt="John Vicent">
+            <p>Responsable de entregar el producto incrementado en cada sprint. Trabaja de manera colaborativa para completar las historias de usuario del sprint.</p>
+            <Button text="Ver perfil de LinkedIn" variant="pulse" href={linkedInUrls.johnVicent} target="_blank" />
+        </div>
+    </details>
+</div>
+
+<style>
+  .scrum-header {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .scrum-header h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+  }
+
+  .scrum-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00d4ff;
+  }
+
+  .scrum-header p {
+    font-size: 1rem;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .scrum-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .scrum-team-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .scrum-team-card:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .scrum-team-card summary {
+    padding: 24px;
+    list-style: none;
+    position: relative;
+    user-select: none;
+  }
+
+  .scrum-team-card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .scrum-team-card summary::after {
+    content: '+';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #00d4ff;
+    transition: transform 0.3s ease;
+  }
+
+  .scrum-team-card[open] summary::after {
+    content: '−';
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .scrum-team-card summary h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: #e0e0e0;
+    font-weight: 600;
+  }
+
+  .scrum-team-card summary .role {
+    color: #00d4ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .scrum-team-card .card-content {
+    padding: 0 24px 24px 24px;
+    border-top: 1px solid #2a2a2a;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scrum-team-card .card-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 16px 0;
+  }
+
+  .scrum-team-card .card-content p {
+    color: #b0b0b0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0 0 16px 0;
+  }
+
+  @media (max-width: 768px) {
+    .scrum-team {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    .scrum-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .scrum-header h3 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+
