@@ -1,8 +1,46 @@
 ---
 // Footer con estadísticas del sitio
+interface Props {
+  linkedInUrls?: {
+    johnVicent?: string;
+    pedroVial?: string;
+    luisCervello?: string;
+  };
+}
+
+const { 
+  linkedInUrls = {
+    johnVicent: "https://www.linkedin.com/in/john-vicent",
+    pedroVial: "https://www.linkedin.com/in/pedro-vial-blasco",
+    luisCervello: "https://www.linkedin.com/in/luis-cervello"
+  }
+} = Astro.props;
 ---
 
 <footer>
+  <div class="authors">
+    <p>
+      Proyecto creado por:  
+    <a href="https://www.linkedin.com/in/johngonzalezvicent/" target="_blank" rel="noopener noreferrer" class="author-link">
+      John Vicent
+      <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>, 
+      <a href="https://www.linkedin.com/in/pedro-vial/" target="_blank" rel="noopener noreferrer" class="author-link">
+        Pedro Vial Blasco
+        <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a> y 
+      <a href="https://www.linkedin.com/in/luis-cervelló-mediel-a959b3364/" target="_blank" rel="noopener noreferrer" class="author-link">
+        Luis Cervello
+        <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+    </p>
+  </div>
   <div class="stats-container">
     <div class="stat-item">
       <p class="stat-number">500+</p>
@@ -27,6 +65,44 @@
     margin-top: 3rem;
     padding: 2.5rem 0;
     border-top: 1px solid #333;
+  }
+
+  .authors {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .authors p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin: 0;
+  }
+
+  .author-link {
+    color: #00d4ff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .author-link:hover {
+    color: #00ffdd;
+    text-decoration: underline;
+  }
+
+  .linkedin-icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .author-link:hover .linkedin-icon {
+    transform: translateY(-2px);
   }
 
   .stats-container {
