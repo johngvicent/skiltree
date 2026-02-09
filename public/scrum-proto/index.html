@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Resources Framework</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Learning Resources Framework</h1>
+            <p class="subtitle">Recursos de aprendizaje gratuitos organizados jerárquicamente</p>
+        </header>
+
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchBox" 
+                placeholder="🔍 Buscar categorías o recursos..." 
+                autocomplete="off"
+            />
+            <button id="resetBtn">Restablecer</button>
+            <button id="expandAllBtn">Expandir Todo</button>
+            <button id="collapseAllBtn">Colapsar Todo</button>
+        </div>
+
+        <div id="tree-container"></div>
+
+        <footer>
+            <p>💡 Haz clic en los nodos para expandir/contraer | Los enlaces externos se abren en nueva pestaña</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

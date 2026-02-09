@@ -1,29 +1,3 @@
----
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import SearchBar from '../components/SearchBar.astro';
-import TreeVisualization from '../components/TreeVisualization.astro';
-import Footer from '../components/Footer.astro';
----
-
-<Layout>
-	<Header />
-	<SearchBar />
-	<TreeVisualization />
-	<Footer />
-</Layout>
-
-<script>
-// @ts-nocheck
-import * as d3 from 'd3';
-
-function initTree() {
-    const treeContainer = document.getElementById('tree-container');
-    if (!treeContainer) return;
-
-    // Evitar múltiples SVG en HMR / recargas parciales
-    treeContainer.innerHTML = '';
-
 // Datos de ejemplo - Estructura jerárquica de recursos de aprendizaje
 const treeData = {
     name: "Recursos de Aprendizaje",
@@ -181,9 +155,8 @@ const treeData = {
 };
 
 // Configuración del árbol D3.js
-const margin = { top: 20, right: 120, bottom: 20, left: 250 };
-const containerWidth = Math.max(treeContainer.clientWidth || window.innerWidth, 320);
-const width = Math.max(containerWidth - margin.left - margin.right, 100);
+const margin = { top: 20, right: 120, bottom: 20, left: 120 };
+const width = window.innerWidth - margin.left - margin.right;
 const height = 800 - margin.top - margin.bottom;
 
 let i = 0;
@@ -403,17 +376,7 @@ document.getElementById('collapseAllBtn').addEventListener('click', function() {
 
 // Hacer el SVG responsivo
 window.addEventListener('resize', function() {
-    const newContainerWidth = Math.max(treeContainer.clientWidth || window.innerWidth, 320);
-    const newWidth = Math.max(newContainerWidth - margin.left - margin.right, 100);
+    const newWidth = window.innerWidth - margin.left - margin.right;
     d3.select("#tree-container svg")
         .attr("width", newWidth + margin.left + margin.right);
 });
-
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTree);
-} else {
-    initTree();
-}
-</script>

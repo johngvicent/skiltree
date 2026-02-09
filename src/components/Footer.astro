@@ -1,0 +1,24 @@
+---
+interface Props {
+  message?: string;
+}
+
+const { 
+  message = "💡 Haz clic en los nodos para expandir/contraer | Los enlaces externos se abren en nueva pestaña" 
+} = Astro.props;
+---
+
+<footer>
+  <p>{message}</p>
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid #333;
+  }
+</style>
