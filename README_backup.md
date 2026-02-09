@@ -30,33 +30,27 @@ Proyecto creado por:
 
 ## 🚀 Estructura del Proyecto
 
+Inside of your Astro project, you'll see the following folders and files:
+
 ```text
 /
 ├── public/
-│   ├── scrum-proto/       # Prototipo original
-│   └── tree-app.js        # Lógica D3.js (legacy)
-├── src/
-│   ├── components/
-│   │   ├── Header.astro          # Encabezado con logo
-│   │   ├── Footer.astro          # Footer con estadísticas
-│   │   ├── SearchBar.astro       # Barra de búsqueda y controles
-│   │   └── TreeVisualization.astro # Contenedor del árbol D3
-│   ├── layouts/
-│   │   └── Layout.astro          # Layout principal con fuentes
-│   └── pages/
-│       └── index.astro           # Página principal con lógica D3
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
 └── package.json
 ```
 
-## 🛠️ Tecnologías Utilizadas
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-- **Astro**: Framework web moderno
-- **D3.js v4**: Visualización de datos y árbol interactivo
-- **TypeScript**: Tipado estático
-- **Google Fonts**: Parkinsans (títulos) y Google Sans (cuerpo)
-- **Material Symbols**: Iconografía
-
-## 🧞 Comandos
+## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -98,3 +92,4 @@ Proyecto educativo desarrollado para ayudar a la comunidad de aprendizaje.
 ---
 
 **Built for lifelong learners** 🚀
+
