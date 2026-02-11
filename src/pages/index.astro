@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar.astro';
 import TreeVisualization from '../components/TreeVisualization.astro';
 import Footer from '../components/Footer.astro';
 import EquipoScrum from '../components/EquipoScrum.astro';
+import MisionVision from '../components/MisionVision.astro';
 ---
 
 <Layout>
@@ -12,6 +13,7 @@ import EquipoScrum from '../components/EquipoScrum.astro';
 	<SearchBar />
 	<p style="text-align: center; margin: 20px 0;">Haz clic en los nodos para expandir/contraer · Los enlaces externos se abren en nueva pestaña.</p>
 	<TreeVisualization />
+	<MisionVision />
     <EquipoScrum />
 	<Footer />
 </Layout>
@@ -229,8 +231,11 @@ function collapse(d) {
 function expand(d) {
     if (d._children) {
         d.children = d._children;
-        d.children.forEach(expand);
         d._children = null;
+    }
+
+    if (d.children) {
+        d.children.forEach(expand);
     }
 }
 
@@ -375,19 +380,6 @@ searchBox.addEventListener('input', function(e) {
         const matches = d.data.name.toLowerCase().includes(searchTerm);
         link.classed('hidden', !matches);
     });
-});
-
-// Botón de restablecer
-document.getElementById('resetBtn').addEventListener('click', function() {
-    searchBox.value = '';
-    svg.selectAll('g.node').classed('hidden', false);
-    svg.selectAll('path.link').classed('hidden', false);
-    
-    // Colapsar todo excepto el nodo raíz
-    if (root.children) {
-        root.children.forEach(collapse);
-    }
-    update(root);
 });
 
 // Botón de expandir todo
