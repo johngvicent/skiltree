@@ -193,27 +193,43 @@ export const treeData = {
             name: "Hardware",
             children: [
                 {
-                    name: "Arduino",
+                    name: "Conocimientos Básicos",
                     children: [
-                        { name: "Arduino Docs", url: "https://docs.arduino.cc" },
-                        { name: "Arduino Project Hub", url: "https://create.arduino.cc/projecthub" },
-                        { name: "Adafruit Learn", url: "https://learn.adafruit.com" }
+                        { name: "Fundamentos de Hardware", url: "https://logongas.es/doku.php?id=clase:asir:fhw:start" },
+                        { name: "Vista en 3D", url: "https://www.viewhardware.com/" },
+                        { name: "Simulador montaje de PC", url: "https://pcpartpicker.com/list/" },
+                        { name: "Montaje y mantenimiento de equipos informáticos", url: "https://es.wikibooks.org/wiki/Mantenimiento_y_Montaje_de_Equipos_Inform%C3%A1ticos" },
+                        { name: "Reparaciones de Hardware", url: "https://es.ifixit.com" }
                     ]
                 },
                 {
                     name: "Electrónica",
                     children: [
-                        { name: "All About Circuits", url: "https://www.allaboutcircuits.com" },
-                        { name: "Electronics Tutorials", url: "https://www.electronics-tutorials.ws" },
-                        { name: "SparkFun Tutorials", url: "https://learn.sparkfun.com" }
+                        { name: "Electricidad", url: "https://www.luisllamas.es/curso-electricidad/" },
+                        { name: "Electrónica", url: "https://www.luisllamas.es/curso-electronica/" },
+                        { name: "Diseño de PCB", url: "https://www.luisllamas.es/curso-pcb/" },
+                        { name: "Ingeniería Eléctrica", url: "https://www.khanacademy.org/science/electrical-engineering" },
+                        { name: "Circuitos electrónicos", url: "https://www.allaboutcircuits.com/textbook" }
                     ]
                 },
                 {
-                    name: "Raspberry Pi",
+                    name: "Raspberry",
                     children: [
-                        { name: "Raspberry Pi Docs", url: "https://www.raspberrypi.org/documentation" },
-                        { name: "MagPi Magazine", url: "https://magpi.raspberrypi.org" },
-                        { name: "Pi My Life Up", url: "https://pimylifeup.com" }
+                        { name: "Documentación Raspberry", url: "https://www.raspberrypi.com/documentation" },
+                        { name: "Curso en profundidad sobre Raspberry Pi", url: "https://www.luisllamas.es/curso-raspberry-pi/" },
+                        { name: "Tutoriales con Raspberry Pi", url: "https://geekytheory.com/tutorial-raspberry-pi-1-el-primer-encendido/" },
+                        { name: "Web de Ideas de proyecto Raspberry Pi", url: "https://www.instructables.com/circuits/raspberry-pi/projects/" }
+                    ]
+                },
+                {
+                    name: "Arduino",
+                    children: [
+                        { name: "Documentación Arduino", url: "https://docs.arduino.cc" },
+                        { name: "Project Hub con ideas de proyectos", url: "https://projecthub.arduino.cc" },
+                        { name: "Curso de introducción a arduino", url: "https://www.luisllamas.es/curso-arduino-iniciacion/" },
+                        { name: "Curso en profundidad sobre Arduino", url: "https://www.luisllamas.es/curso-arduino-avanzado/" },
+                        { name: "Simulador de arduino", url: "https://www.tinkercad.com/circuits" },
+                        { name: "Simuladores varios", url: "https://wokwi.com" }
                     ]
                 }
             ]
