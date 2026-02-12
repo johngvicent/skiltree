@@ -11,28 +11,43 @@ export const treeData = {
             name: "Ciberseguridad",
             children: [
                 {
-                    name: "CTFs",
+                    name: "Fundamentos y Redes",
                     children: [
-                        { name: "HackTheBox", url: "https://www.hackthebox.com" },
-                        { name: "TryHackMe", url: "https://tryhackme.com" },
-                        { name: "PicoCTF", url: "https://picoctf.org" },
-                        { name: "Root Me", url: "https://www.root-me.org" }
+                        { name: "Cisco Networking Academy", url: "https://www.cisco.com/site/es/es/learn/index.html" },
+                        { name: "Contando Bits - Curso de Redes", url: "https://www.youtube.com/watch?v=OLSKCWjI778" },
+                        { name: "INCIBE (Formación Sectorial)", url: "https://www.incibe.es/formacion" },
+                        { name: "Roadmap.sh - Cyber Security", url: "https://roadmap.sh/cyber-security" },
+                        { name: "Profesor Wolf (Linux y Redes)", url: "https://www.youtube.com/c/ProfesorWolf" }
                     ]
                 },
                 {
-                    name: "Cursos",
+                    name: "Hacking Ético (Red Team)",
                     children: [
-                        { name: "Cybrary", url: "https://www.cybrary.it" },
-                        { name: "OWASP", url: "https://owasp.org" },
-                        { name: "PortSwigger Academy", url: "https://portswigger.net/web-security" }
+                        { name: "Hack The Box (HTB)", url: "https://www.hackthebox.com/" },
+                        { name: "TryHackMe", url: "https://tryhackme.com/" },
+                        { name: "Metasploit Unleashed (OffSec)", url: "https://www.offsec.com/metasploit-unleashed/" },
+                        { name: "VulnHub", url: "https://www.vulnhub.com/" },
+                        { name: "HackThisSite", url: "https://www.hackthissite.org/" }
                     ]
                 },
                 {
-                    name: "Herramientas",
+                    name: "Defensa Digital (Blue Team)",
                     children: [
-                        { name: "Kali Linux", url: "https://www.kali.org" },
-                        { name: "Metasploit", url: "https://www.metasploit.com" },
-                        { name: "Wireshark", url: "https://www.wireshark.org" }
+                        { name: "PortSwigger Web Security Academy", url: "https://portswigger.net/web-security" },
+                        { name: "OWASP Top 10", url: "https://owasp.org/www-project-top-ten/" },
+                        { name: "OWASP Juice Shop", url: "https://owasp.org/www-project-juice-shop/" },
+                        { name: "DVWA (Damn Vulnerable Web App)", url: "https://dvwa.co.uk/" },
+                        { name: "Google Gruyere", url: "https://google-gruyere.appspot.com/" }
+                    ]
+                },
+                {
+                    name: "Forense y Malware",
+                    children: [
+                        { name: "Autopsy Digital Forensics", url: "https://www.autopsy.com/support/training/" },
+                        { name: "Malware Traffic Analysis", url: "https://www.malware-traffic-analysis.net/" },
+                        { name: "Ghidra (NSA)", url: "https://ghidra-sre.org/" },
+                        { name: "CFReDS", url: "https://cfreds.nist.gov/" },
+                        { name: "Curso de Análisis Forense (DragonJAR)", url: "https://www.dragonjar.org/curso-gratuito-de-anlisis-forense-basico.xhtml" }
                     ]
                 }
             ]
