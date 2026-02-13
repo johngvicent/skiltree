@@ -165,26 +165,46 @@ export const treeData = {
                 {
                     name: "Matemáticas",
                     children: [
-                        { name: "Khan Academy", url: "https://www.khanacademy.org/math" },
-                        { name: "Brilliant", url: "https://brilliant.org" },
-                        { name: "3Blue1Brown", url: "https://www.3blue1brown.com" },
-                        { name: "MIT OpenCourseWare", url: "https://ocw.mit.edu/courses/mathematics" }
+                        { name: "Khan Academy", url: "https://es.khanacademy.org/" },
+                        { name: "OpenStax", url: "https://openstax.org/subjects/matematicas" },
+                        { name: "Unicoos (David Calle)", url: "https://www.youtube.com/@unicoos" },
+                        { name: "Derivando", url: "https://www.youtube.com/@Derivando" }
                     ]
                 },
                 {
                     name: "Física",
                     children: [
-                        { name: "Physics Classroom", url: "https://www.physicsclassroom.com" },
-                        { name: "HyperPhysics", url: "http://hyperphysics.phy-astr.gsu.edu" },
-                        { name: "Feynman Lectures", url: "https://www.feynmanlectures.caltech.edu" }
+                        { name: "FisicaLab", url: "https://www.fisicalab.com/" },
+                        { name: "Virtual", url: "https://www.youtube.com/@Vitual" },
+                        { name: "PhET Interactive Simulations", url: "https://phet.colorado.edu/es/" }
                     ]
                 },
                 {
-                    name: "Psicología",
+                    name: "Química",
                     children: [
-                        { name: "Simply Psychology", url: "https://www.simplypsychology.org" },
-                        { name: "Psychology Today", url: "https://www.psychologytoday.com" },
-                        { name: "Coursera Psychology", url: "https://www.coursera.org/browse/social-sciences/psychology" }
+                        { name: "Khan Academy (Química)", url: "https://es.khanacademy.org/science/chemistry" },
+                        { name: "Quimtube", url: "https://www.quimitube.com/" },
+                        { name: "Ptable (Tabla Periódica Interactiva)", url: "https://ptable.com/?lang=es#Propiedades" }
+                    ]
+                },
+                {
+                    name: "Biología y Psicología",
+                    children: [
+                        { name: "Khan Academy (Biología)", url: "https://es.khanacademy.org/science/biology" },
+                        { name: "PhET (Biología)", url: "https://phet.colorado.edu/es/simulations/filter?subjects=biology" },
+                        { name: "Amoeba Sisters (con subtítulos en español)", url: "https://www.youtube.com/@AmoebaSisters" },
+                        { name: "Psicología y Mente", url: "https://psicologiaymente.com/" },
+                        { name: "Antroporama", url: "https://youtube.com/@antroporamadivulgacion?si=iTZvZ0Ez2Rni01kt" }
+                    ]
+                },
+                {
+                    name: "Tierra y Medio Ambiente",
+                    children: [
+                        { name: "Instituto Geográfico Nacional (IGN) - España", url: "https://www.ign.es/web/ign/portal/recursos-educativos" },
+                        { name: "Google Earth Engine", url: "https://earthengine.google.com/timelapse/" },
+                        { name: "Earth Nullschool", url: "https://earth.nullschool.net/es/#current/wind/surface/level/orthographic=-1.86,7.64,368" },
+                        { name: "EcologiaVerde", url: "https://www.youtube.com/@EcologiaVerde" },
+                        { name: "Ciencias de la Tierra", url: "https://youtube.com/playlist?list=PLXR757nNWDE0Zms-tuAIqieEkG5z08dLG&si=nnpFbLhwxLC_BCe2" }
                     ]
                 }
             ]
