@@ -56,21 +56,280 @@ export const treeData = {
             name: "Desarrollo",
             children: [
                 {
-                    name: "Frontend",
+                    name: "Front End",
                     children: [
-                        { name: "freeCodeCamp", url: "https://www.freecodecamp.org" },
-                        { name: "MDN Web Docs", url: "https://developer.mozilla.org" },
-                        { name: "CSS-Tricks", url: "https://css-tricks.com" },
-                        { name: "JavaScript.info", url: "https://javascript.info" }
+                        {
+                            name: "Temario",
+                            children: [
+                                { name: "Lenguaje de Marcado", url: "https://jorgesanchez.net/lmsgi" },
+                                { name: "Despliegue de aplicaciones web", url: "https://despliegue.codeandcoke.com" },
+                                { name: "Desarrollo Web en Entorno Servidor", url: "https://servidor.codeandcoke.com" },
+                                { name: "Diseño de interfaces Web", url: "https://logongas.es/doku.php?id=clase:daw:diw:start" }
+                            ]
+                        },
+                        {
+                            name: "Lenguajes Front",
+                            children: [
+                                {
+                                    name: "Marcado",
+                                    children: [
+                                        {
+                                            name: "HTML",
+                                            children: [
+                                                { name: "Lenguaje HTML", url: "https://lenguajehtml.com/" },
+                                                { name: "Falcon Webs", url: "https://www.youtube.com/@FalconMasters" }
+                                            ]
+                                        },
+                                        {
+                                            name: "CSS",
+                                            children: [
+                                                { name: "Falcon Webs", url: "https://web.dev/learn/css?hl=es" },
+                                                { name: "Hola Mundo CSS", url: "https://www.youtube.com/watch?v=wZniZEbPAzk&t=365s" }
+                                            ]
+                                        },
+                                        {
+                                            name: "Tailwind",
+                                            children: [
+                                                { name: "Web Oficial", url: "https://tailwindcss.com/" },
+                                                { name: "Tailgrids", url: "https://tailgrids.com/" },
+                                                { name: "Midudev", url: "https://www.youtube.com/watch?v=R5EXap3vNDA&t=10s" }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "Script",
+                                    children: [
+                                        {
+                                            name: "Javascript",
+                                            children: [
+                                                { name: "Javascript Info", url: "https://es.javascript.info/" },
+                                                { name: "Soy Dalto", url: "https://youtube.com/playlist?list=PLE8uP447fYpiBqMVF1hdWl9uFeVEeXRTm&si=qB0hLHUelYXcP5GN" },
+                                                { name: "Codier", url: "https://codier.io/" }
+                                            ]
+                                        },
+                                        {
+                                            name: "Typescript",
+                                            children: [
+                                                { name: "Manual Oficial", url: "https://www.typescriptlang.org/es/docs/handbook/" },
+                                                { name: "Miudev Typescript", url: "https://youtu.be/xtp_DuPxo9Q?si=UHo82xlW_m-AbUjl" }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "Arquitecturas",
+                                    children: [
+                                        {
+                                            name: "Astro",
+                                            children: [
+                                                { name: "Astro Docs", url: "https://docs.astro.build/es/getting-started/" },
+                                                { name: "Temas de Astro", url: "https://astro.build/themes/" },
+                                                { name: "Gentleman Programming", url: "https://www.youtube.com/watch?v=xi5PFNj90Mk" }
+                                            ]
+                                        },
+                                        {
+                                            name: "React",
+                                            children: [
+                                                {
+                                                    name: "Vite",
+                                                    children: [
+                                                        { name: "React Learn", url: "https://es.react.dev/learn" },
+                                                        { name: "Vite Guide", url: "https://es.vitejs.dev/guide/" },
+                                                        { name: "Hola Mundo | Aprende React", url: "https://www.youtube.com/watch?v=yIr_1CasXkM" }
+                                                    ]
+                                                },
+                                                {
+                                                    name: "Next.js",
+                                                    children: [
+                                                        { name: "Next Learn", url: "https://nextjs.org/learn" },
+                                                        { name: "Vercel", url: "https://www.youtube.com/watch?v=sxcKVwURuhk" },
+                                                        { name: "Leonidas Esteban Tutoriales", url: "https://www.youtube.com/watch?v=_sTUmUqyGAI" }
+                                                    ]
+                                                },
+                                                {
+                                                    name: "Native",
+                                                    children: [
+                                                        { name: "React Native Express", url: "https://www.reactnative.express/" },
+                                                        { name: "Expo Documentación", url: "https://docs.expo.dev/" },
+                                                        { name: "Midulive | React Native", url: "https://www.youtube.com/watch?v=U23lNFm_J70" }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "Angular",
+                                            children: [
+                                                { name: "Documentación", url: "https://docs.angular.lat/overview" },
+                                                { name: "Angular University", url: "https://blog.angular-university.io/" },
+                                                { name: "Dominicode", url: "https://youtube.com/playlist?list=PL_9MDdjVuFjG0D_DE7INriK-vdI_Rm4n6&si=E_cxayA9b5CedCXk" }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "Recursos",
+                            children: [
+                                { name: "Vercel", url: "https://vercel.com/" },
+                                { name: "Netlify", url: "https://www.netlify.com/" }
+                            ]
+                        }
                     ]
                 },
                 {
-                    name: "Backend",
+                    name: "Back End",
                     children: [
-                        { name: "Node.js Docs", url: "https://nodejs.org/docs" },
-                        { name: "Django Tutorial", url: "https://docs.djangoproject.com" },
-                        { name: "Spring Guides", url: "https://spring.io/guides" },
-                        { name: "FastAPI", url: "https://fastapi.tiangolo.com" }
+                        {
+                            name: "Temario",
+                            children: [
+                                {
+                                    name: "Bases de datos",
+                                    children: [
+                                        { name: "Javier Gutierrez Apuntes", url: "https://javiergutierrez.trade/apuntes-de-bases-de-datos/" },
+                                        { name: "Code and Coke | Bases", url: "https://bbdd.codeandcoke.com/" },
+                                        { name: "Aitor Medrano", url: "https://aitor-medrano.github.io/bd/" }
+                                    ]
+                                },
+                                {
+                                    name: "Acceso a datos",
+                                    children: [
+                                        { name: "Code and Coke | Accesos", url: "https://datos.codeandcoke.com/" }
+                                    ]
+                                },
+                                {
+                                    name: "Prog. de servicios y procesos",
+                                    children: [
+                                        { name: "Code and Coke | PSP", url: "https://psp.codeandcoke.com/" }
+                                    ]
+                                },
+                                {
+                                    name: "Entornos de Desarrollo",
+                                    children: [
+                                        { name: "Code and Coke | Entornos", url: "https://entornos-desarrollo.codeandcoke.com/" }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "Lenguajes Back",
+                            children: [
+                                {
+                                    name: "Java",
+                                    children: [
+                                        { name: "Open Webinars", url: "https://openwebinars.net/temas/java/" },
+                                        { name: "Java Ya", url: "https://www.tutorialesprogramacionya.com/javaya/" },
+                                        { name: "TodoCode", url: "https://youtube.com/playlist?list=PLQxX2eiEaqbwxYrMUJ6gRz82mLzUeeJy9&si=uEY5az_qgyStoh40" }
+                                    ]
+                                },
+                                {
+                                    name: "Entorno C",
+                                    children: [
+                                        {
+                                            name: "C",
+                                            children: [
+                                                { name: "Learn C", url: "https://www.learn-c.org/es/" },
+                                                { name: "C Ya", url: "https://www.tutorialesprogramacionya.com/cya/" },
+                                                { name: "Programacion ATS | C", url: "https://youtube.com/playlist?list=PLWtYZ2ejMVJmUTNE2QVaCd1y_6GslOeZ6&si=EG2WrVaNZBXzSokK" }
+                                            ]
+                                        },
+                                        {
+                                            name: "C#",
+                                            children: [
+                                                { name: "Microsoft Learn C#", url: "https://learn.microsoft.com/es-es/dotnet/csharp/" },
+                                                { name: "C# Station", url: "https://csharp-station.com/Tutorial" },
+                                                { name: "Hdeleon Tutorial", url: "https://www.youtube.com/watch?v=j8sxDnr7nPY" }
+                                            ]
+                                        },
+                                        {
+                                            name: "C++",
+                                            children: [
+                                                { name: "Con Clase C++", url: "https://conclase.net/c" },
+                                                { name: "Luis Llamas C++", url: "https://www.luisllamas.es/curso-cpp/" },
+                                                { name: "Programación ATS | C++", url: "https://youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh&si=fh4i15yZSmN2dqK_" }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "Python",
+                                    children: [
+                                        { name: "Documentacion Oficial", url: "https://docs.python.org/es/3/tutorial/index.html" },
+                                        { name: "Luis Llamas | Python", url: "https://www.luisllamas.es/curso-python/" },
+                                        { name: "Hola Mundo | Python desde 0", url: "https://www.youtube.com/watch?v=tQZy0U8s9LY&t=47s" }
+                                    ]
+                                },
+                                {
+                                    name: "Kotlin",
+                                    children: [
+                                        { name: "Kotlin Ya", url: "https://www.tutorialesprogramacionya.com/kotlinya/" },
+                                        { name: "Curso Kotlin Para Android", url: "https://cursokotlin.com/" },
+                                        { name: "Mouredev | Kotlin", url: "https://www.youtube.com/watch?v=T3ugOYTRF7c" }
+                                    ]
+                                },
+                                {
+                                    name: "SQL",
+                                    children: [
+                                        {
+                                            name: "SQL",
+                                            children: [
+                                                { name: "Khan Academy | SQL", url: "https://es.khanacademy.org/computing/computer-programming/sql" },
+                                                { name: "Soy Dalto Curso SQL", url: "https://www.youtube.com/watch?v=DFg1V-rO6Pg" },
+                                                { name: "W3Schools | SQL", url: "https://www.w3schools.com/sql/" }
+                                            ]
+                                        },
+                                        {
+                                            name: "MySQL",
+                                            children: [
+                                                { name: "MySQL Tutorial", url: "https://www.mysqltutorial.org/" },
+                                                { name: "My Sql Ya", url: "https://www.tutorialesprogramacionya.com/mysqlya/" },
+                                                { name: "Hola Mundo | My SQL", url: "https://www.youtube.com/watch?v=uUdKAYl-F7g" }
+                                            ]
+                                        },
+                                        {
+                                            name: "T-SQL",
+                                            children: [
+                                                { name: "Microsoft Learn SQL", url: "https://learn.microsoft.com/es-es/training/paths/get-started-querying-with-transact-sql/" },
+                                                { name: "SQL Ya", url: "https://www.tutorialesprogramacionya.com/sqlserverya/" },
+                                                { name: "Informaticonfig", url: "https://youtube.com/playlist?list=PL2Z95CSZ1N4EW0PvNhd4ySZisgBrJjSW2&si=5EcmCrfSLjO4QjNg" }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "Git",
+                                    children: [
+                                        { name: "Pro Git Book", url: "https://git-scm.com/book/es/v2" },
+                                        { name: "Git Branch", url: "https://learngitbranching.js.org/?locale=es_ES" },
+                                        { name: "Pildoras Informaticas", url: "https://youtube.com/playlist?list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&si=TmpEOoGoEUIo0OAs" }
+                                    ]
+                                },
+                                {
+                                    name: "Docker",
+                                    children: [
+                                        { name: "Luis Llamas | Docker", url: "https://www.luisllamas.es/curso-docker/" },
+                                        { name: "Play With Docker", url: "https://labs.play-with-docker.com/" },
+                                        { name: "Hola Mundo | Aprende Docker", url: "https://youtu.be/4Dko5W96WHg?si=4IQdVEqKPPoOGul6" }
+                                    ]
+                                },
+                                {
+                                    name: "Node.js",
+                                    children: [
+                                        { name: "Luis Llamas | Node", url: "https://www.luisllamas.es/curso-nodejs/" },
+                                        { name: "Documentacion Oficial", url: "https://nodejs.org/es/learn/getting-started/introduction-to-nodejs" },
+                                        { name: "Miudev | Node", url: "https://youtube.com/playlist?list=PLUofhDIg_38qm2oPOV-IRTTEKyrVBBaU7&si=bPAN93093IL-wL-u" }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "Recursos",
+                            children: [
+                                { name: "Grow with Google", url: "https://grow.google/intl/es/courses-and-tools/?category=career&topic=coding-development" },
+                                { name: "Moocs Gratuitos", url: "https://mooc.es/" }
+                            ]
+                        }
                     ]
                 },
                 {
@@ -79,6 +338,81 @@ export const treeData = {
                         { name: "Docker Docs", url: "https://docs.docker.com" },
                         { name: "Kubernetes", url: "https://kubernetes.io/docs" },
                         { name: "GitHub Actions", url: "https://docs.github.com/actions" }
+                    ]
+                },
+                {
+                    name: "Herramientas",
+                    children: [
+                        {
+                            name: "NotebookLM",
+                            children: [
+                                { name: "Notebook Page", url: "https://notebooklm.google.com/" },
+                                { name: "UDIA", url: "https://www.youtube.com/watch?v=Xv5ZrnzA2DA" },
+                                { name: "Alejavi Rivera | NotebookLM", url: "https://www.youtube.com/watch?v=0xg49Hw-g4A" }
+                            ]
+                        },
+                        {
+                            name: "VS Code",
+                            children: [
+                                { name: "Documentacion Oficial", url: "https://code.visualstudio.com/docs" },
+                                { name: "Keep Coding", url: "https://keepcoding.io/blog/tutorial-de-visual-studio-code-para-iniciar/" },
+                                { name: "Mouredev | VS Code", url: "https://www.youtube.com/watch?v=CxF3ykWP1H4" }
+                            ]
+                        },
+                        {
+                            name: "Antigravity",
+                            children: [
+                                { name: "Portal Oficial", url: "https://antigravity.google/" },
+                                { name: "Victor Perez | Antigravity", url: "https://youtu.be/XvncJbEQHOc?si=BS_cY0_ybxeiuOVx" },
+                                { name: "Google Cloud Tech", url: "https://www.youtube.com/@googlecloudtech" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Inteligencia Artificial",
+                    children: [
+                        {
+                            name: "ChatGPT (OpenAI)",
+                            children: [
+                                { name: "Chatgpt", url: "https://chatgpt.com/" },
+                                { name: "Ingenieria de Prompts", url: "https://learnprompting.org/es/docs/introduction" },
+                                { name: "Code Interpreter", url: "https://developers.openai.com/api/docs/guides/tools-code-interpreter/" },
+                                { name: "Dot CSV | Testeos en IA", url: "https://youtube.com/playlist?list=PL-Ogd76BhmcB8J_IR_xOfTDt0zoyp-ntt&si=9i7vgvLXmqdatUos" }
+                            ]
+                        },
+                        {
+                            name: "Gemini (Google)",
+                            children: [
+                                { name: "Gemini", url: "https://gemini.google.com/" },
+                                { name: "Google AI Studio", url: "https://aistudio.google.com/" },
+                                { name: "Integrar Api de Gemini", url: "https://www.youtube.com/watch?v=M0zabpjp-Ew" }
+                            ]
+                        },
+                        {
+                            name: "Claude (Anthropic)",
+                            children: [
+                                { name: "Claude", url: "https://claude.ai/" },
+                                { name: "Platzi | Claude", url: "https://www.youtube.com/watch?v=A6oW7SnNq2g" },
+                                { name: "MoureDev Vibe Coding", url: "https://www.youtube.com/watch?v=BWIhNQ-DvqY" }
+                            ]
+                        },
+                        {
+                            name: "Grok (xAI)",
+                            children: [
+                                { name: "xAI", url: "https://x.ai/" },
+                                { name: "Documentación", url: "https://docs.x.ai/overview" },
+                                { name: "Debates de buen uso", url: "https://www.youtube.com/watch?v=e6aYRoxnEjg" }
+                            ]
+                        },
+                        {
+                            name: "GitHub Copilot",
+                            children: [
+                                { name: "Documentación oficial", url: "https://docs.github.com/es/copilot" },
+                                { name: "Github Skills", url: "https://learn.github.com/skills" },
+                                { name: "Mouredev | Vibe con Github Copilot", url: "https://www.youtube.com/watch?v=XpQ7uUXuPHg" }
+                            ]
+                        }
                     ]
                 }
             ]
