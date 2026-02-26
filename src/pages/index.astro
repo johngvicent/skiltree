@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import SearchBar from '../components/SearchBar.astro';
 import TreeVisualization from '../components/TreeVisualization.astro';
+import Roadmap from '../components/Roadmap.astro';
 import Footer from '../components/Footer.astro';
 import EquipoScrum from '../components/EquipoScrum.astro';
 import MisionVision from '../components/MisionVision.astro';
@@ -12,8 +13,33 @@ import MisionVision from '../components/MisionVision.astro';
 	<Header />
 		<h2 style="text-align: center; margin: 20px 0;">Haz clic en los nodos para expandir/contraer · Los enlaces externos se abren en nueva pestaña.</h2>
 	<SearchBar />
-	<TreeVisualization />
+	
+	<div class="desktop-view">
+		<TreeVisualization />
+	</div>
+	<div class="mobile-view">
+		<Roadmap />
+	</div>
+
 	<MisionVision />
     <EquipoScrum />
 	<Footer />
 </Layout>
+
+<style>
+	.desktop-view {
+		display: block;
+	}
+	.mobile-view {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		.desktop-view {
+			display: none;
+		}
+		.mobile-view {
+			display: block;
+		}
+	}
+</style>
