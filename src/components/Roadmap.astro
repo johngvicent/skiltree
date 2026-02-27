@@ -1,0 +1,264 @@
+---
+import { treeData } from '../data/treedata.js';
+
+const { node = treeData, level = 0 } = Astro.props;
+
+const isRoot = node === treeData;
+const hasChildren = node.children && node.children.length > 0;
+---
+
+{isRoot ? (
+  <div class="roadmap-container">
+    <div class="roadmap-path">
+      {node.children?.map((child: any) => (
+        <Astro.self node={child} level={1} />
+      ))}
+    </div>
+  </div>
+) : (
+  <div class={`roadmap-item level-${level}`}>
+    {hasChildren ? (
+      <details class="roadmap-details">
+        <summary class="roadmap-summary">
+          <div class="summary-content">
+            <span class="node-dot"></span>
+            <span class="node-title">{node.name}</span>
+          </div>
+          <span class="icon-expand">+</span>
+        </summary>
+        <div class="roadmap-children">
+          {node.children?.map((child: any) => (
+            <Astro.self node={child} level={level + 1} />
+          ))}
+        </div>
+      </details>
+    ) : (
+      <a href={node.url} target="_blank" rel="noopener noreferrer" class="roadmap-link">
+        <span class="node-dot leaf-dot"></span>
+        <span class="link-text">{node.name}</span>
+        <span class="link-icon">↗</span>
+      </a>
+    )}
+  </div>
+)}
+
+<style is:global>
+  .roadmap-container {
+    padding: 1rem;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      margin: 20px 0;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .roadmap-path {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .roadmap-item {
+      position: relative;
+    }
+
+    .roadmap-details {
+      background: #252525;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+
+    .roadmap-summary {
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      background: #252525;
+      transition: background 0.2s;
+      list-style: none;
+    }
+
+    .roadmap-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .roadmap-summary:hover {
+      background: #2a2a2a;
+    }
+
+    .roadmap-details[open] > .roadmap-summary {
+      border-bottom: 1px solid #333;
+      background: #2a2a2a;
+    }
+
+    .roadmap-details[open] > .roadmap-summary .icon-expand {
+      transform: rotate(45deg);
+    }
+
+    .summary-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .node-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #00d4ff;
+      display: inline-block;
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+      flex-shrink: 0;
+    }
+
+    .leaf-dot {
+      background-color: #ff6b6b;
+      box-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+      width: 8px;
+      height: 8px;
+    }
+
+    .icon-expand {
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: transform 0.3s ease;
+      color: #888;
+    }
+
+    .roadmap-children {
+      padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+      border-left: 2px solid #333;
+      margin-left: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .roadmap-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.8rem 1rem;
+      background: #222;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #e0e0e0;
+      transition: all 0.2s;
+      border: 1px solid #333;
+    }
+
+    .roadmap-link:hover {
+      background: #2a2a2a;
+      border-color: #ff6b6b;
+      color: #ff6b6b;
+      transform: translateX(4px);
+    }
+
+    .link-icon {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .roadmap-link:hover .link-icon {
+      color: #ff6b6b;
+    }
+
+  /* Level specific styling */
+  .level-1 > .roadmap-details > .roadmap-summary .node-title { 
+    color: #00d4ff; 
+    font-size: 1.1rem; 
+  }
+  .level-2 > .roadmap-details > .roadmap-summary .node-title { 
+    color: #00ffdd; 
+  }
+  .level-2 > .roadmap-details > .roadmap-summary .node-dot {
+    background-color: #00ffdd;
+    box-shadow: 0 0 8px rgba(0, 255, 221, 0.4);
+  }
+</style>
+
+<script>
+  function initRoadmap() {
+    const searchBox = document.getElementById('searchBox');
+    const expandAllBtn = document.getElementById('expandAllBtn');
+    const collapseAllBtn = document.getElementById('collapseAllBtn');
+    
+    if (!searchBox || !expandAllBtn || !collapseAllBtn) return;
+
+    const roadmapItems = document.querySelectorAll('.roadmap-item');
+    const detailsElements = document.querySelectorAll('.roadmap-details');
+
+    searchBox.addEventListener('input', function(e) {
+      const target = e.target as HTMLInputElement;
+      const searchTerm = target.value.toLowerCase();
+      
+      if (searchTerm === '') {
+        roadmapItems.forEach(item => {
+          (item as HTMLElement).style.display = '';
+          item.classList.remove('hidden-by-search');
+        });
+        return;
+      }
+
+      roadmapItems.forEach(item => {
+        const titleElement = item.querySelector('.node-title, .link-text');
+        const text = titleElement ? titleElement.textContent?.toLowerCase() || '' : '';
+        
+        const matches = text.includes(searchTerm);
+        
+        if (matches) {
+          (item as HTMLElement).style.display = '';
+          item.classList.remove('hidden-by-search');
+          
+          let parent = item.parentElement;
+          while (parent) {
+            if (parent.tagName === 'DETAILS') {
+              (parent as HTMLDetailsElement).open = true;
+              const parentItem = parent.closest('.roadmap-item');
+              if (parentItem) {
+                (parentItem as HTMLElement).style.display = '';
+                parentItem.classList.remove('hidden-by-search');
+              }
+            }
+            parent = parent.parentElement;
+          }
+        } else {
+          item.classList.add('hidden-by-search');
+        }
+      });
+
+      roadmapItems.forEach(item => {
+        if (item.classList.contains('hidden-by-search')) {
+          const hasVisibleChild = Array.from(item.querySelectorAll('.roadmap-item')).some(child => !child.classList.contains('hidden-by-search'));
+          if (!hasVisibleChild) {
+            (item as HTMLElement).style.display = 'none';
+          } else {
+            (item as HTMLElement).style.display = '';
+          }
+        }
+      });
+    });
+
+    expandAllBtn.addEventListener('click', function() {
+      detailsElements.forEach(details => {
+        (details as HTMLDetailsElement).open = true;
+      });
+    });
+
+    collapseAllBtn.addEventListener('click', function() {
+      detailsElements.forEach(details => {
+        (details as HTMLDetailsElement).open = false;
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRoadmap);
+  } else {
+    initRoadmap();
+  }
+</script>
