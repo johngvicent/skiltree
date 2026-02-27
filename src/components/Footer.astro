@@ -54,9 +54,9 @@ const {
       <div class="footer-col">
         <h4 class="col-title">Navegación</h4>
         <ul class="col-links">
-          <li><a href="#">Mapa de Recursos</a></li>
-          <li><a href="#">Proyecto</a></li>
-          <li><a href="#">Equipo Scrum</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#mision-vision">Proyecto</a></li>
+          <li><a href="/#equipo-scrum">Scrum Team</a></li>
         </ul>
       </div>
 
@@ -100,12 +100,8 @@ const {
     <!-- Copyright -->
     <div class="footer-bottom">
       <p class="copyright">
-        &copy; 2026 SkillTree. Hecho con <span class="heart">&hearts;</span> para aprendices de por vida.
+        &copy; 2026 SkillTree. El primer paso para aprender.
       </p>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook"><span class="material-icons-round">facebook</span></a>
-        <a href="#" aria-label="Web"><span class="material-icons-round">language</span></a>
-      </div>
     </div>
 
   </div>
@@ -133,11 +129,14 @@ const {
     padding-bottom: 3rem;
     border-bottom: 1px solid rgba(255,255,255,0.07);
     margin-bottom: 3rem;
+    text-align: center;
+    justify-items: center;
   }
   .stat-item {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    align-items: center;
   }
   .stat-number {
     font-size: 1.5rem;
@@ -161,10 +160,13 @@ const {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 4rem;
+    text-align: center;
+    justify-items: center;
   }
   .brand {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -205,6 +207,7 @@ const {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    align-items: center;
   }
   .col-links a {
     font-size: 0.875rem;
@@ -225,10 +228,11 @@ const {
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.07);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+    text-align: center;
   }
   .copyright {
     font-size: 0.75rem;
@@ -268,6 +272,6 @@ const {
     .stats-bar { grid-template-columns: 1fr; gap: 1.25rem; }
     .footer-grid { grid-template-columns: 1fr; }
     .brand-col { grid-column: auto; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .footer-bottom { flex-direction: column; align-items: center; }
   }
 </style>
