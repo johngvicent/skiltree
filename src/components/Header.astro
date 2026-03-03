@@ -1,14 +1,13 @@
 ---
 import Navbar from './Navbar.astro';
+import SearchBar from './SearchBar.astro';
 
 interface Props {
   title?: string;
-  subtitle?: string;
 }
 
 const { 
-  title = "📚 SkillTree ", 
-  subtitle = "Tutoriales y recursos de aprendizaje gratuitos para desarrolladores" 
+  title = "📚 SkillTree "
 } = Astro.props;
 ---
 
@@ -17,16 +16,14 @@ const {
     <a href="/">
       <img src="/logo-skilltree-monocroma.png" alt="Skilltree Logo" class="icon" />
       <h1><span class="skill">Skill</span><span class="tree">Tree</span></h1>
-      
     </a>
   </div>
-  <div class="header-info">
-    <p class="subtitle">{subtitle}</p>
+  <div class="header-search">
+    <SearchBar />
   </div>
   <div class="header-nav">
     <Navbar />
   </div>
-  
 </header>
 
 <style>
@@ -103,11 +100,11 @@ const {
     text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
   }
 
-  .subtitle {
-    color: #d2d2d2;
-    font-size: 1.1em;
-    font-weight: 500;
-    margin: 0;
+  .header-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 0;
   }
 
   .header-nav {
@@ -117,28 +114,32 @@ const {
 
   @media (max-width: 768px) {
     header {
-      flex-direction: column;
-      text-align: center;
+      flex-wrap: wrap;
+      padding: 12px 16px;
+      gap: 12px;
     }
 
-    .header-info {
-      display: none;
-    }
-
-    header h1 {
-      font-size: 1.8em;
-    }
-
-    .icon {
-      max-height: 1.8em;
-    }
-
-    .subtitle {
-      font-size: 0.9em;
+    .header-brand {
+      order: 1;
     }
 
     .header-nav {
+      order: 2;
+      margin-left: auto;
+    }
+
+    .header-search {
+      order: 3;
+      flex-basis: 100%;
       width: 100%;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+    }
+
+    .icon {
+      max-height: 1.5em;
     }
   }
 </style>

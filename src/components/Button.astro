@@ -6,6 +6,7 @@ interface Props {
   type?: 'button' | 'submit' | 'reset';
   class?: string;
   target?: '_blank' | '_self';
+  id?: string;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
   href,
   type = 'button',
   class: className = '',
-  target = '_self'
+  target = '_self',
+  id
 } = Astro.props;
 
 const Tag = href ? 'a' : 'button';
@@ -23,7 +25,7 @@ const additionalProps = href
   : { type };
 ---
 
-<Tag class={`btn ${variant} ${className}`} {...additionalProps}>
+<Tag id={id} class={`btn ${variant} ${className}`} {...additionalProps}>
   {text}
 </Tag>
 

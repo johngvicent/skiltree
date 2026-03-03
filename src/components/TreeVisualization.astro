@@ -3,7 +3,12 @@
 // The logic will be handled in client-side script
 ---
 
-<div id="tree-container"></div>
+<div id="tree-wrapper">
+  <div id="tree-container"></div>
+  <div id="sticky-scrollbar">
+    <div id="scrollbar-thumb"></div>
+  </div>
+</div>
 
 <script>
 // @ts-nocheck
@@ -21,26 +26,29 @@ function initTree() {
 const margin = { top: 20, right: 120, bottom: 20, left: 250 };
 const containerWidth = Math.max(treeContainer.clientWidth || window.innerWidth, 320);
 const width = Math.max(containerWidth - margin.left - margin.right, 100);
-const height = 800 - margin.top - margin.bottom;
+const minHeight = 400; // Altura mínima
+const nodeHeight = 40; // Espacio vertical por nodo
 
 let i = 0;
 let duration = 750;
 let root;
 
-// Crear el árbol D3
-const tree = d3.tree().size([height, width]);
+// Crear el árbol D3 (el tamaño se actualizará dinámicamente)
+const tree = d3.tree();
 
-// Crear el elemento SVG
-const svg = d3.select("#tree-container")
+// Crear el elemento SVG (altura inicial, se actualizará dinámicamente)
+const svgElement = d3.select("#tree-container")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("height", minHeight + margin.top + margin.bottom);
+
+const svg = svgElement
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
 // Inicializar el árbol
 root = d3.hierarchy(treeData, d => d.children);
-root.x0 = height / 2;
+root.x0 = minHeight / 2;
 root.y0 = 0;
 
 // Colapsar todos los nodos excepto el primero
@@ -71,8 +79,24 @@ function expand(d) {
     }
 }
 
+// Función para calcular altura dinámica basada en nodos visibles
+function calculateDynamicHeight(rootNode) {
+    const visibleNodes = rootNode.descendants().length;
+    return Math.max(minHeight, visibleNodes * nodeHeight);
+}
+
 // Función principal de actualización
 function update(source) {
+    // Calcular altura dinámica basada en nodos visibles
+    const dynamicHeight = calculateDynamicHeight(root);
+    
+    // Actualizar el tamaño del árbol y del SVG
+    tree.size([dynamicHeight, width]);
+    svgElement
+        .transition()
+        .duration(duration)
+        .attr("height", dynamicHeight + margin.top + margin.bottom);
+
     // Asignar posiciones a los nodos
     const treeData = tree(root);
     const nodes = treeData.descendants();
@@ -234,7 +258,78 @@ window.addEventListener('resize', function() {
     const newWidth = Math.max(newContainerWidth - margin.left - margin.right, 100);
     d3.select("#tree-container svg")
         .attr("width", newWidth + margin.left + margin.right);
+    updateStickyScrollbar();
 });
+
+// Sticky scrollbar logic
+const stickyScrollbar = document.getElementById('sticky-scrollbar');
+const scrollbarThumb = document.getElementById('scrollbar-thumb');
+let isDragging = false;
+let startX = 0;
+let scrollLeft = 0;
+
+function updateStickyScrollbar() {
+    const containerWidth = treeContainer.clientWidth;
+    const scrollWidth = treeContainer.scrollWidth;
+    
+    if (scrollWidth <= containerWidth) {
+        stickyScrollbar.style.display = 'none';
+        return;
+    }
+    
+    stickyScrollbar.style.display = 'block';
+    const thumbWidth = Math.max((containerWidth / scrollWidth) * 100, 10);
+    const thumbPosition = (treeContainer.scrollLeft / (scrollWidth - containerWidth)) * (100 - thumbWidth);
+    
+    scrollbarThumb.style.width = thumbWidth + '%';
+    scrollbarThumb.style.left = thumbPosition + '%';
+}
+
+treeContainer.addEventListener('scroll', updateStickyScrollbar);
+
+// Drag functionality for the thumb
+scrollbarThumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    scrollLeft = treeContainer.scrollLeft;
+    document.body.style.userSelect = 'none';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    const containerWidth = treeContainer.clientWidth;
+    const scrollWidth = treeContainer.scrollWidth;
+    const scrollbarWidth = stickyScrollbar.clientWidth;
+    const thumbWidth = scrollbarThumb.clientWidth;
+    
+    const deltaX = e.clientX - startX;
+    const scrollRatio = (scrollWidth - containerWidth) / (scrollbarWidth - thumbWidth);
+    
+    treeContainer.scrollLeft = scrollLeft + (deltaX * scrollRatio);
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    document.body.style.userSelect = '';
+});
+
+// Click on track to jump
+stickyScrollbar.addEventListener('click', (e) => {
+    if (e.target === scrollbarThumb) return;
+    
+    const rect = stickyScrollbar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const scrollbarWidth = stickyScrollbar.clientWidth;
+    const scrollWidth = treeContainer.scrollWidth;
+    const containerWidth = treeContainer.clientWidth;
+    
+    const scrollRatio = clickX / scrollbarWidth;
+    treeContainer.scrollLeft = scrollRatio * (scrollWidth - containerWidth);
+});
+
+// Initial update
+setTimeout(updateStickyScrollbar, 100);
 
 }
 
@@ -246,19 +341,69 @@ if (document.readyState === 'loading') {
 </script>
 
 <style>
+  #tree-wrapper {
+    position: relative;
+  }
+
   #tree-container {
     margin: 30px 0;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: scroll;
+    overflow-y: visible;
     background-color: #1a1a1a;
     background-image: url('/background/tech-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     border-radius: 8px;
     padding: 20px 60px;
-    min-height: 500px;
+    min-height: 450px;
     width: 100%;
+    transition: height 0.3s ease;
+    /* Ocultar scrollbar nativa */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  #tree-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Sticky scrollbar al fondo de la pantalla */
+  #sticky-scrollbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1000px;
+    height: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  #scrollbar-thumb {
+    position: absolute;
+    top: 2px;
+    height: 10px;
+    min-width: 50px;
+    background: linear-gradient(90deg, #00d4ff, #00a8cc);
+    border-radius: 5px;
+    cursor: grab;
+    transition: background 0.2s ease;
+  }
+
+  #scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #00ffdd, #00d4ff);
+  }
+
+  #scrollbar-thumb:active {
+    cursor: grabbing;
+    background: linear-gradient(90deg, #00ffdd, #00d4ff);
   }
 
   :global(.node circle) {
