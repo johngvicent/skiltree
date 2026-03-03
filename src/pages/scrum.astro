@@ -1,44 +1,328 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import SearchBar from '../components/SearchBar.astro';
 import Footer from '../components/Footer.astro';
 import EquipoScrum from '../components/EquipoScrum.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout>
     <Header />
-    <h1 style="text-align: center; margin: 20px 0;">Equipo Scrum</h1>
-    <EquipoScrum />
-    <section>
-        <h2>Agilidad en el ADN: Cómo construimos Skiltree</h2>
-        <p>En Skiltree, no solo nos importa el código, sino cómo llegamos a él. Para dar vida a esta plataforma, implementamos el marco de trabajo Scrum a lo largo de tres Sprints de ejecución precisa y mejora continua.</p>
+
+    <!-- Hero del equipo -->
+    <section class="page-hero">
+        <h1>Equipo Scrum</h1>
     </section>
-    <section>
-        <div>
+
+    <EquipoScrum />
+
+    <!-- Intro Scrum -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Agilidad en el ADN: Cómo construimos Skiltree</h2>
+            <p>En Skiltree, no solo nos importa el código, sino cómo llegamos a él. Para dar vida a esta plataforma, implementamos el marco de trabajo Scrum a lo largo de tres Sprints de ejecución precisa y mejora continua.</p>
+        </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section class="section-block">
+        <div class="section-header">
             <h2>El Método Detrás del Árbol</h2>
             <p>Para asegurar que cada nodo de conocimiento fuera perfecto, nos apoyamos en un ecosistema digital robusto:</p>
         </div>
-        <div>
-            <h3>Jira</h3>
-            <p>Nuestra fuente de verdad para el backlog, permitiendo un seguimiento transparente de cada tarea.</p>
-            <img src="/scrum/jira-backlog.png" alt="Jira Backlog" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        </div>
-        <div>
-            <h3>Google Workspace</h3>
-            <p>El centro neurálgico de nuestra documentación y activos compartidos.</p>
-        </div>
-        <div>
-            <h3>Vs Code · GitHub · Vercel</h3>
-            <p>Nuestro repositorio central para el código, documentación y gestión de tareas.</p>
-            <button>Visitar Github</button>
+
+        <div class="tools-grid">
+            <!-- Jira -->
+            <article class="tool-card">
+                <div class="tool-card__header">
+                    <h3>Jira</h3>
+                    <p>Nuestra fuente de verdad para el backlog, permitiendo un seguimiento transparente de cada tarea.</p>
+                </div>
+                <div class="tool-card__gallery">
+                    <figure class="tool-card__figure">
+                        <img src="/scrum/jira-backlog.png" alt="Jira Backlog" loading="lazy" />
+                        <figcaption>
+                            <h4>Pantalla del Backlog (El Plan Maestro)</h4>
+                            <p>Aquí es donde ocurre la magia de la priorización. Nuestro Product Owner, Pedro Vial, utiliza esta pantalla para capturar, refinar y priorizar todas las tareas del proyecto Skiltree. Es nuestra fuente única de verdad para lo que se debe construir.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="tool-card__figure">
+                        <img src="/scrum/jira-tablero.png" alt="Jira Tablero" loading="lazy" />
+                        <figcaption>
+                            <h4>El Tablero (El Flujo Ágil en Acción)</h4>
+                            <p>¡Este es el motor de nuestro flujo de trabajo! Aquí es donde ocurre el verdadero movimiento. Visualizamos el estado de cada tarea, limitamos el trabajo en curso y nos aseguramos de que nada se quede atascado. Toda la colaboración diaria de Pedro, Luis y John se refleja aquí.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="tool-card__figure">
+                        <img src="/scrum/jira-metricas.png" alt="Jira Métricas" loading="lazy" />
+                        <figcaption>
+                            <h4>Métricas (Información para el Scrum Master)</h4>
+                            <p>Información vital para nuestro Scrum Master, Luis Cervelló. Estos gráficos nos permiten medir nuestra velocidad, predecir el progreso del sprint y identificar cuellos de botella. Es nuestra herramienta clave para la mejora continua y la retrospectiva.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- Google Workspace -->
+            <article class="tool-card">
+                <div class="tool-card__header">
+                    <h3>Google Workspace</h3>
+                    <p>El centro neurálgico de nuestra documentación y activos compartidos.</p>
+                </div>
+                <div class="tool-card__gallery">
+                    <figure class="tool-card__figure">
+                        <img src="/scrum/google-workspace.png" alt="Google Workspace" loading="lazy" />
+                        <figcaption>
+                            <p>La eficiencia de nuestro flujo de trabajo se vio potenciada por el ecosistema de Google Workspace, que sirvió como nuestra oficina virtual centralizada. Utilizamos Google Drive como repositorio compartido para gestionar todos los activos del proyecto, desde la documentación técnica en Google Docs hasta los recursos visuales, imágenes y logotipos que dan identidad a Skiltree.</p>
+                            <p>Para las ceremonias de cierre, confiamos en Google Presentations para estructurar nuestras Sprint Reviews de forma clara y visual. Además, integramos Gemini como un aliado estratégico, utilizándolo para validar que nuestros procesos se alinearan con las mejores prácticas de Scrum, asegurando así un desarrollo organizado, escalable y de alta calidad. Esta combinación de herramientas nos permitió mantener una "fuente única de verdad" y una comunicación sin fricciones durante todo el ciclo de vida del proyecto.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- VS Code · GitHub · Vercel -->
+            <article class="tool-card">
+                <div class="tool-card__header">
+                    <h3>VS Code · GitHub · Vercel</h3>
+                    <p>Nuestro repositorio central para el código, documentación y gestión de tareas.</p>
+                </div>
+                <div class="tool-card__gallery">
+                    <figure class="tool-card__figure">
+                        <img src="/scrum/vs-github-vercel.png" alt="VS Code, GitHub y Vercel" loading="lazy" />
+                        <figcaption>
+                            <p>El desarrollo de Skiltree sigue un proceso ágil y automatizado que garantiza la entrega continua de valor. Todo comienza en Visual Studio Code, donde nuestro desarrollador, John G. Vicent, escribe y depura el código de forma eficiente. Una vez que el código está listo, se sube a GitHub, nuestro repositorio central, donde se gestionan las versiones y se fomenta la colaboración segura entre todo el equipo. Finalmente, Vercel detecta automáticamente los cambios en GitHub y realiza el despliegue de forma instantánea, permitiendo que el producto esté listo para ser mostrado y validado por nuestro Product Owner, Pedro Vial, y el Scrum Master, Luis Cervelló. Esta integración fluida entre herramientas nos permite mantener un ritmo de desarrollo constante y una alta calidad en el producto final.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="tool-card__actions">
+                    <Button text="Visitar Github" href="https://github.com/johngvicent/skiltree" target="_blank" />
+                </div>
+            </article>
         </div>
     </section>
-    <section>
-        <h2>Eficiencia Real: El Poder de la Comunicación</h2>
-        <p>Uno de nuestros mayores orgullos fueron nuestras Daily Scrums de menos de 15 minutos. Gracias a una planificación clara y una sincronización total, logramos eliminar ruidos y cuellos de botella. Esto nos permitió dedicar el Sprint final a pulir detalles de accesibilidad y experiencia de usuario, logrando un producto del que nos sentimos profundamente satisfechos.</p>
-        <img src="/scrum/graficos.png" alt="Workflow Scrum" style="width: 100%; max-width: 1700px; margin: 20px auto; display: block; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
-        <p>"Menos reuniones, más soluciones. Skiltree es el resultado de un equipo que sabe exactamente hacia dónde va."</p>
+
+    <!-- Comunicación -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Eficiencia Real: El Poder de la Comunicación</h2>
+            <p>Uno de nuestros mayores orgullos fueron nuestras Daily Scrums de menos de 15 minutos. Gracias a una planificación clara y una sincronización total, logramos eliminar ruidos y cuellos de botella. Esto nos permitió dedicar el Sprint final a pulir detalles de accesibilidad y experiencia de usuario, logrando un producto del que nos sentimos profundamente satisfechos.</p>
+        </div>
+        <figure class="section-figure section-figure--wide">
+            <img src="/scrum/graficos.png" alt="Workflow Scrum" loading="lazy" />
+        </figure>
+        <blockquote class="highlight-quote">
+            "Menos reuniones, más soluciones. Skiltree es el resultado de un equipo que sabe exactamente hacia dónde va."
+        </blockquote>
     </section>
+
     <Footer />
 </Layout>
+
+<style>
+    /* ===== Page Hero ===== */
+    .page-hero {
+        text-align: center;
+        padding: 48px 20px 24px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+        color: #e0e0e0;
+        letter-spacing: -0.02em;
+    }
+
+    /* ===== Section Block (shared layout) ===== */
+    .section-block {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 20px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        color: #e0e0e0;
+        margin-bottom: 16px;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+        color: #b0b0b0;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* ===== Tools Grid ===== */
+    .tools-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    /* ===== Tool Card ===== */
+    .tool-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tool-card:hover {
+        border-color: #00d4ff;
+        box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+    }
+
+    .tool-card__header {
+        padding: 32px 32px 24px;
+    }
+
+    .tool-card__header h3 {
+        font-size: 1.35rem;
+        color: #00d4ff;
+        margin-bottom: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .tool-card__header p {
+        color: #b0b0b0;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* ===== Gallery inside card ===== */
+    .tool-card__gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        padding: 0 32px 32px;
+    }
+
+    .tool-card__figure {
+        margin: 0;
+    }
+
+    .tool-card__figure img {
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tool-card__figure img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .tool-card__figure figcaption {
+        padding-top: 16px;
+    }
+
+    .tool-card__figure figcaption h4 {
+        font-size: 1.05rem;
+        color: #e0e0e0;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .tool-card__figure figcaption p {
+        color: #b0b0b0;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin-bottom: 12px;
+    }
+
+    .tool-card__figure figcaption p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ===== Card Actions ===== */
+    .tool-card__actions {
+        padding: 0 32px 32px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ===== Section Figure ===== */
+    .section-figure {
+        margin: 32px auto 0;
+        text-align: center;
+    }
+
+    .section-figure img {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .section-figure img:hover {
+        transform: scale(1.01);
+    }
+
+    .section-figure--wide img {
+        max-width: 1400px;
+    }
+
+    /* ===== Blockquote ===== */
+    .highlight-quote {
+        text-align: center;
+        font-size: 1.15rem;
+        font-style: italic;
+        color: #00d4ff;
+        max-width: 800px;
+        margin: 32px auto 0;
+        padding: 24px 32px;
+        border-left: 3px solid #00d4ff;
+        background: rgba(0, 212, 255, 0.05);
+        border-radius: 0 8px 8px 0;
+        line-height: 1.7;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+        .page-hero {
+            padding: 32px 16px 16px;
+        }
+
+        .page-hero h1 {
+            font-size: 1.75rem;
+        }
+
+        .section-block {
+            padding: 32px 16px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .tool-card__header {
+            padding: 24px 20px 16px;
+        }
+
+        .tool-card__gallery {
+            grid-template-columns: 1fr;
+            padding: 0 20px 24px;
+        }
+
+        .tool-card__actions {
+            padding: 0 20px 24px;
+        }
+
+        .highlight-quote {
+            font-size: 1rem;
+            padding: 20px 24px;
+        }
+    }
+</style>
