@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import SearchBar from '../components/SearchBar.astro';
+import Footer from '../components/Footer.astro';
+import EquipoScrum from '../components/EquipoScrum.astro';
+---
+
+<Layout>
+    <Header />
+    <h1 style="text-align: center; margin: 20px 0;">Equipo Scrum</h1>
+    <EquipoScrum />
+    <section>
+        <h2>Agilidad en el ADN: Cómo construimos Skiltree</h2>
+        <p>En Skiltree, no solo nos importa el código, sino cómo llegamos a él. Para dar vida a esta plataforma, implementamos el marco de trabajo Scrum a lo largo de tres Sprints de ejecución precisa y mejora continua.</p>
+    </section>
+    <section>
+        <div>
+            <h2>El Método Detrás del Árbol</h2>
+            <p>Para asegurar que cada nodo de conocimiento fuera perfecto, nos apoyamos en un ecosistema digital robusto:</p>
+        </div>
+        <div>
+            <h3>Jira</h3>
+            <p>Nuestra fuente de verdad para el backlog, permitiendo un seguimiento transparente de cada tarea.</p>
+            <img src="/scrum/jira-backlog.png" alt="Jira Backlog" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        </div>
+        <div>
+            <h3>Google Workspace</h3>
+            <p>El centro neurálgico de nuestra documentación y activos compartidos.</p>
+        </div>
+        <div>
+            <h3>Vs Code · GitHub · Vercel</h3>
+            <p>Nuestro repositorio central para el código, documentación y gestión de tareas.</p>
+            <button>Visitar Github</button>
+        </div>
+    </section>
+    <section>
+        <h2>Eficiencia Real: El Poder de la Comunicación</h2>
+        <p>Uno de nuestros mayores orgullos fueron nuestras Daily Scrums de menos de 15 minutos. Gracias a una planificación clara y una sincronización total, logramos eliminar ruidos y cuellos de botella. Esto nos permitió dedicar el Sprint final a pulir detalles de accesibilidad y experiencia de usuario, logrando un producto del que nos sentimos profundamente satisfechos.</p>
+        <img src="/scrum/graficos.png" alt="Workflow Scrum" style="width: 100%; max-width: 1700px; margin: 20px auto; display: block; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+        <p>"Menos reuniones, más soluciones. Skiltree es el resultado de un equipo que sabe exactamente hacia dónde va."</p>
+    </section>
+    <Footer />
+</Layout>
