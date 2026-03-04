@@ -1,0 +1,458 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+    <Header />
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>Política de Cookies</h1>
+        <p class="page-hero__meta">Última actualización: 4 de marzo de 2026</p>
+    </section>
+
+    <!-- Intro -->
+    <section class="section-block">
+        <div class="prose-card">
+            <p>En <strong>Skilltree</strong> (<a href="https://skiltree.vercel.app" target="_blank" rel="noopener noreferrer">skilltree.vercel.app</a>), utilizamos cookies y tecnologías similares para garantizar el correcto funcionamiento de la plataforma, mejorar tu experiencia de navegación y analizar el uso que se hace del sitio. En esta página te explicamos qué son las cookies, qué tipos utilizamos y cómo puedes gestionarlas.</p>
+        </div>
+    </section>
+
+    <!-- ¿Qué son las cookies? -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>¿Qué son las cookies?</h2>
+        </div>
+        <div class="prose-card">
+            <p>Las cookies son pequeños archivos de texto que un sitio web almacena en tu dispositivo (ordenador, tablet o móvil) cuando lo visitas. Permiten que el sitio recuerde tus preferencias y acciones durante un periodo de tiempo determinado, de modo que no tengas que volver a configurarlas cada vez que regreses.</p>
+            <p>Las cookies pueden ser propias (establecidas por el propio dominio del sitio) o de terceros (establecidas por dominios externos integrados en el sitio), y pueden ser sesionales (se eliminan al cerrar el navegador) o persistentes (permanecen durante un tiempo definido).</p>
+        </div>
+    </section>
+
+    <!-- Tipos de cookies -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Tipos de cookies que utilizamos</h2>
+            <p>A continuación se clasifican las cookies presentes en Skilltree según su finalidad:</p>
+        </div>
+
+        <div class="cookies-grid">
+
+            <article class="cookie-card">
+                <div class="cookie-card__badge cookie-card__badge--tech">Técnicas</div>
+                <h3 class="cookie-card__title">Cookies técnicas y de sesión</h3>
+                <p class="cookie-card__desc">Son estrictamente necesarias para el funcionamiento del sitio. Permiten la navegación y el uso de las funciones básicas de la plataforma. Sin ellas, el sitio no puede funcionar correctamente.</p>
+                <ul class="cookie-card__list">
+                    <li>Gestión de la sesión de usuario</li>
+                    <li>Seguridad y prevención de fraude</li>
+                    <li>Preferencias de accesibilidad</li>
+                </ul>
+                <span class="cookie-card__duration">Duración: sesión</span>
+            </article>
+
+            <article class="cookie-card">
+                <div class="cookie-card__badge cookie-card__badge--analytics">Analíticas</div>
+                <h3 class="cookie-card__title">Cookies analíticas</h3>
+                <p class="cookie-card__desc">Nos permiten conocer cómo interactúan los usuarios con el sitio, qué páginas visitan y qué recursos generan más interés, con el objetivo de mejorar continuamente la plataforma.</p>
+                <ul class="cookie-card__list">
+                    <li>Medición de tráfico y visitas (Vercel Analytics)</li>
+                    <li>Análisis de rutas de navegación</li>
+                    <li>Detección de errores y rendimiento</li>
+                </ul>
+                <span class="cookie-card__duration">Duración: hasta 2 años</span>
+            </article>
+
+            <article class="cookie-card">
+                <div class="cookie-card__badge cookie-card__badge--pref">Preferencias</div>
+                <h3 class="cookie-card__title">Cookies de preferencias</h3>
+                <p class="cookie-card__desc">Almacenan las configuraciones que has elegido (como el idioma o el tema visual) para ofrecerte una experiencia personalizada en visitas posteriores.</p>
+                <ul class="cookie-card__list">
+                    <li>Configuración de idioma</li>
+                    <li>Preferencias de visualización</li>
+                    <li>Estado de expansión del árbol de recursos</li>
+                </ul>
+                <span class="cookie-card__duration">Duración: hasta 1 año</span>
+            </article>
+
+            <article class="cookie-card">
+                <div class="cookie-card__badge cookie-card__badge--third">Terceros</div>
+                <h3 class="cookie-card__title">Cookies de terceros</h3>
+                <p class="cookie-card__desc">Algunos servicios externos integrados en Skilltree pueden establecer sus propias cookies. Estos proveedores disponen de sus propias políticas de privacidad.</p>
+                <ul class="cookie-card__list">
+                    <li><strong>Vercel</strong> — infraestructura y despliegue</li>
+                    <li><strong>GitHub</strong> — enlaces e integración de repositorios</li>
+                    <li><strong>Google Fonts</strong> — tipografía web</li>
+                </ul>
+                <span class="cookie-card__duration">Duración: varía según proveedor</span>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Base legal -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Base legal para el uso de cookies</h2>
+        </div>
+        <div class="prose-card">
+            <p>El uso de cookies en Skilltree se ampara en la <strong>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE)</strong> y en el <strong>Reglamento General de Protección de Datos (RGPD – Reglamento UE 2016/679)</strong>.</p>
+            <p>Las cookies técnicas están exentas del requisito de consentimiento previo, al ser imprescindibles para la prestación del servicio. El resto de cookies sólo se activan previa aceptación por parte del usuario mediante el banner de consentimiento de cookies que se muestra en la primera visita al sitio.</p>
+        </div>
+    </section>
+
+    <!-- Gestión -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Cómo gestionar y desactivar las cookies</h2>
+            <p>Puedes configurar o deshabilitar las cookies en cualquier momento desde tu navegador. A continuación encontrarás los enlaces directos a las instrucciones de los navegadores más comunes:</p>
+        </div>
+
+        <ul class="browser-grid" role="list">
+            <li class="browser-card">
+                <span class="browser-card__name">Google Chrome</span>
+                <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="browser-card__link">Ver instrucciones ↗</a>
+            </li>
+            <li class="browser-card">
+                <span class="browser-card__name">Mozilla Firefox</span>
+                <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" class="browser-card__link">Ver instrucciones ↗</a>
+            </li>
+            <li class="browser-card">
+                <span class="browser-card__name">Safari</span>
+                <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="browser-card__link">Ver instrucciones ↗</a>
+            </li>
+            <li class="browser-card">
+                <span class="browser-card__name">Microsoft Edge</span>
+                <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" class="browser-card__link">Ver instrucciones ↗</a>
+            </li>
+        </ul>
+
+        <div class="prose-card prose-card--warning">
+            <p><strong>Nota importante:</strong> desactivar determinadas cookies puede afectar al correcto funcionamiento de algunas funciones de Skilltree, como la personalización de la experiencia o la memorización de tus preferencias de navegación.</p>
+        </div>
+    </section>
+
+    <!-- Actualizaciones -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Actualizaciones de esta política</h2>
+        </div>
+        <div class="prose-card">
+            <p>Skilltree se reserva el derecho a modificar la presente Política de Cookies en cualquier momento, ya sea por cambios en la legislación vigente, por incorporación de nuevas funcionalidades o por variaciones en los proveedores de servicios. Los cambios entrarán en vigor desde su publicación en esta misma página.</p>
+            <p>Te recomendamos revisar esta política periódicamente para mantenerte informado sobre el uso que hacemos de las cookies.</p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section-block">
+        <blockquote class="highlight-quote">
+            ¿Tienes preguntas sobre nuestra Política de Cookies? Puedes contactarnos a través del repositorio del proyecto en <a href="https://github.com/johngvicent/skiltree" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </blockquote>
+    </section>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* ===== Page Hero ===== */
+    .page-hero {
+        text-align: center;
+        padding: 48px 20px 24px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+        color: #e0e0e0;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+    }
+
+    .page-hero__meta {
+        font-size: 0.85rem;
+        color: #606060;
+        letter-spacing: 0.03em;
+    }
+
+    /* ===== Section Block ===== */
+    .section-block {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 20px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        color: #e0e0e0;
+        margin-bottom: 16px;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+        color: #b0b0b0;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* ===== Prose Card ===== */
+    .prose-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        padding: 32px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .prose-card p {
+        color: #b0b0b0;
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 16px;
+    }
+
+    .prose-card p:last-child {
+        margin-bottom: 0;
+    }
+
+    .prose-card strong {
+        color: #e0e0e0;
+    }
+
+    .prose-card a {
+        color: #00d4ff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        transition: border-color 0.2s;
+    }
+
+    .prose-card a:hover {
+        border-color: #00d4ff;
+    }
+
+    .prose-card--warning {
+        border-color: rgba(255, 200, 0, 0.2);
+        background: rgba(255, 200, 0, 0.04);
+        margin-top: 24px;
+    }
+
+    .prose-card--warning strong {
+        color: #ffe066;
+    }
+
+    /* ===== Cookies Grid ===== */
+    .cookies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    /* ===== Cookie Card ===== */
+    .cookie-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 10px;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow   0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cookie-card:hover {
+        border-color: rgba(0, 212, 255, 0.35);
+        box-shadow: 0 4px 24px rgba(0, 212, 255, 0.07);
+        transform: translateY(-2px);
+    }
+
+    .cookie-card__badge {
+        display: inline-block;
+        align-self: flex-start;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 20px;
+        padding: 3px 12px;
+    }
+
+    .cookie-card__badge--tech     { background: rgba(0, 212, 255, 0.1);  border: 1px solid rgba(0, 212, 255, 0.3);  color: #00d4ff; }
+    .cookie-card__badge--analytics{ background: rgba(34, 197, 94, 0.1);  border: 1px solid rgba(34, 197, 94, 0.3);  color: #22c55e; }
+    .cookie-card__badge--pref     { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); color: #a855f7; }
+    .cookie-card__badge--third    { background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); color: #f97316; }
+
+    .cookie-card__title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e0e0e0;
+        margin: 0;
+    }
+
+    .cookie-card__desc {
+        font-size: 0.875rem;
+        color: #909090;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    .cookie-card__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .cookie-card__list li {
+        font-size: 0.8rem;
+        color: #707070;
+        padding-left: 16px;
+        position: relative;
+        line-height: 1.5;
+    }
+
+    .cookie-card__list li::before {
+        content: '–';
+        position: absolute;
+        left: 0;
+        color: #444;
+    }
+
+    .cookie-card__list strong {
+        color: #909090;
+    }
+
+    .cookie-card__duration {
+        font-size: 0.75rem;
+        color: #505050;
+        border-top: 1px solid #252525;
+        padding-top: 10px;
+        margin-top: auto;
+        font-style: italic;
+    }
+
+    /* ===== Browser Grid ===== */
+    .browser-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .browser-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .browser-card:hover {
+        border-color: rgba(0, 212, 255, 0.35);
+        transform: translateY(-2px);
+    }
+
+    .browser-card__name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #e0e0e0;
+    }
+
+    .browser-card__link {
+        font-size: 0.8rem;
+        color: #00d4ff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        transition: border-color 0.2s;
+        margin-top: auto;
+    }
+
+    .browser-card__link:hover {
+        border-color: #00d4ff;
+    }
+
+    /* ===== Blockquote ===== */
+    .highlight-quote {
+        text-align: center;
+        font-size: 1.05rem;
+        font-style: italic;
+        color: #b0b0b0;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px 32px;
+        border-left: 3px solid #00d4ff;
+        background: rgba(0, 212, 255, 0.05);
+        border-radius: 0 8px 8px 0;
+        line-height: 1.7;
+    }
+
+    .highlight-quote a {
+        color: #00d4ff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .highlight-quote a:hover {
+        border-color: #00d4ff;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+        .cookies-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .browser-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-hero {
+            padding: 32px 16px 16px;
+        }
+
+        .page-hero h1 {
+            font-size: 1.75rem;
+        }
+
+        .section-block {
+            padding: 32px 16px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .prose-card {
+            padding: 24px 20px;
+        }
+
+        .highlight-quote {
+            font-size: 0.95rem;
+            padding: 20px 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .browser-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
