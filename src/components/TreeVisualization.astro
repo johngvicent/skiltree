@@ -212,40 +212,92 @@ function click(d) {
     }
 }
 
-// Funcionalidad de búsqueda
+// ── Search helpers ────────────────────────────────────────────────────────
+
+// Collapse all descendants of a node without touching the node itself.
+// Works on both .children (visible) and ._children (already-collapsed).
+function collapseDescendants(node) {
+    const kids = [...(node.children || []), ...(node._children || [])];
+    kids.forEach(kid => {
+        collapseDescendants(kid);
+        if (kid.children) {
+            kid._children = kid.children;
+            kid.children = null;
+        }
+    });
+}
+
+// Traverse the FULL hierarchy (visible + collapsed) and collect matches.
+function findAllMatches(node, term) {
+    const matches = [];
+    function traverse(n) {
+        if (n.data.name.toLowerCase().includes(term)) matches.push(n);
+        [...(n.children || []), ...(n._children || [])].forEach(traverse);
+    }
+    traverse(node);
+    return matches;
+}
+
+// Walk up from a matched node to root, opening every collapsed ancestor.
+function expandAncestors(node) {
+    let cursor = node.parent;
+    while (cursor) {
+        if (!cursor.children && cursor._children) {
+            cursor.children = cursor._children;
+            cursor._children = null;
+        }
+        cursor = cursor.parent;
+    }
+}
+
+// ── Search event ──────────────────────────────────────────────────────────
 const searchBox = document.getElementById('searchBox');
 searchBox.addEventListener('input', function(e) {
-    const searchTerm = e.target.value.toLowerCase();
-    
+    const searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+    // Clear existing highlights
+    svg.selectAll('g.node').classed('highlighted', false);
+
     if (searchTerm === '') {
-        // Restablecer todos los nodos
-        svg.selectAll('g.node').classed('hidden', false);
-        svg.selectAll('path.link').classed('hidden', false);
+        // Restore default state: root's direct children visible but collapsed
+        collapseDescendants(root);
+        if (root.children) root.children.forEach(collapse);
+        update(root);
         return;
     }
 
-    // Buscar y resaltar coincidencias
-    svg.selectAll('g.node').each(function(d) {
-        const node = d3.select(this);
-        const matches = d.data.name.toLowerCase().includes(searchTerm);
-        node.classed('hidden', !matches);
-    });
+    // 1. Collapse all descendants so we start from a clean slate
+    collapseDescendants(root);
 
-    svg.selectAll('path.link').each(function(d) {
-        const link = d3.select(this);
-        const matches = d.data.name.toLowerCase().includes(searchTerm);
-        link.classed('hidden', !matches);
-    });
+    // 2. Find every node whose name matches the term
+    const matches = findAllMatches(root, searchTerm);
+
+    // 3. For each match expand the path from root down to it
+    matches.forEach(expandAncestors);
+
+    // 4. Re-render the tree with the expanded paths
+    update(root);
+
+    // 5. Highlight matching nodes once the transition finishes
+    setTimeout(() => {
+        svg.selectAll('g.node').classed('highlighted', function(d) {
+            return d.data.name.toLowerCase().includes(searchTerm);
+        });
+    }, duration + 50);
 });
 
 // Botón de expandir todo
 document.getElementById('expandAllBtn').addEventListener('click', function() {
+    svg.selectAll('g.node').classed('highlighted', false);
+    if (searchBox) (searchBox as HTMLInputElement).value = '';
     expand(root);
     update(root);
 });
 
 // Botón de colapsar todo
 document.getElementById('collapseAllBtn').addEventListener('click', function() {
+    svg.selectAll('g.node').classed('highlighted', false);
+    if (searchBox) (searchBox as HTMLInputElement).value = '';
     if (root.children) {
         root.children.forEach(collapse);
     }
@@ -461,12 +513,15 @@ if (document.readyState === 'loading') {
     stroke-width: 3px;
   }
 
-  :global(.node.hidden) {
-    opacity: 0.2;
+  :global(.node.highlighted circle) {
+    fill: #ffe066 !important;
+    stroke: #ffc800 !important;
+    filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.7));
   }
 
-  :global(.link.hidden) {
-    opacity: 0.1;
+  :global(.node.highlighted text) {
+    fill: #00d4ff !important;
+    font-weight: 700;
   }
 
   @media (max-width: 768px) {
