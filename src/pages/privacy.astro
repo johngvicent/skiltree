@@ -1,0 +1,566 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+    <Header />
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>Política de Privacidad</h1>
+        <p class="page-hero__meta">Última actualización: 4 de marzo de 2026</p>
+    </section>
+
+    <!-- Intro -->
+    <section class="section-block">
+        <div class="prose-card">
+            <p>En <strong>Skilltree</strong> (<a href="https://skiltree.vercel.app" target="_blank" rel="noopener noreferrer">skilltree.vercel.app</a>), el equipo formado por Pedro Vial, Luis Cervelló y John G. Vicent, nos tomamos muy en serio la privacidad de nuestros usuarios. La presente Política de Privacidad describe qué datos personales recogemos, con qué finalidad los tratamos, cuánto tiempo los conservamos y qué derechos puedes ejercer sobre ellos, de conformidad con el <strong>Reglamento General de Protección de Datos (RGPD – Reglamento UE 2016/679)</strong> y la <strong>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)</strong>.</p>
+        </div>
+    </section>
+
+    <!-- Responsable -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Responsable del Tratamiento</h2>
+        </div>
+        <div class="info-grid">
+            <div class="info-row">
+                <span class="info-row__label">Proyecto</span>
+                <span class="info-row__value">Skilltree</span>
+            </div>
+            <div class="info-row">
+                <span class="info-row__label">Equipo</span>
+                <span class="info-row__value">Pedro Vial · Luis Cervelló · John G. Vicent</span>
+            </div>
+            <div class="info-row">
+                <span class="info-row__label">URL del sitio</span>
+                <span class="info-row__value"><a href="https://skilltree.vercel.app" target="_blank" rel="noopener noreferrer">skilltree.vercel.app</a></span>
+            </div>
+            <div class="info-row">
+                <span class="info-row__label">Repositorio</span>
+                <span class="info-row__value"><a href="https://github.com/johngvicent/skiltree" target="_blank" rel="noopener noreferrer">github.com/johngvicent/skiltree</a></span>
+            </div>
+            <div class="info-row">
+                <span class="info-row__label">Contacto</span>
+                <span class="info-row__value">A través del repositorio GitHub del proyecto</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Datos recogidos -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>¿Qué datos recogemos?</h2>
+            <p>Skilltree es una plataforma de consulta de recursos de aprendizaje. No requiere registro de usuario ni formularios de contacto. No obstante, pueden recogerse de forma indirecta los siguientes datos:</p>
+        </div>
+
+        <div class="privacy-grid">
+
+            <article class="privacy-card">
+                <div class="privacy-card__icon privacy-card__icon--blue" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <h3 class="privacy-card__title">Datos de navegación</h3>
+                <p class="privacy-card__desc">Información técnica recogida automáticamente por los servidores de Vercel al acceder al sitio: dirección IP, tipo de navegador, sistema operativo, páginas visitadas, fecha y hora de acceso y URL de referencia.</p>
+                <span class="privacy-card__basis">Base legal: interés legítimo (Art. 6.1.f RGPD)</span>
+            </article>
+
+            <article class="privacy-card">
+                <div class="privacy-card__icon privacy-card__icon--green" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3 class="privacy-card__title">Datos analíticos</h3>
+                <p class="privacy-card__desc">Métricas de uso agregadas y anonimizadas recogidas a través de Vercel Analytics: páginas más visitadas, tiempo de permanencia y dispositivos utilizados. No se asocian a perfiles individuales identificables.</p>
+                <span class="privacy-card__basis">Base legal: interés legítimo (Art. 6.1.f RGPD)</span>
+            </article>
+
+            <article class="privacy-card">
+                <div class="privacy-card__icon privacy-card__icon--yellow" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 class="privacy-card__title">Cookies técnicas</h3>
+                <p class="privacy-card__desc">Pequeños archivos de texto estrictamente necesarios para el funcionamiento del sitio y la memorización de preferencias del usuario (p. ej., estado de expansión del árbol de recursos).</p>
+                <span class="privacy-card__basis">Base legal: necesidad técnica (exentas de consentimiento)</span>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Finalidad -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>¿Para qué usamos tus datos?</h2>
+        </div>
+        <div class="prose-card">
+            <ul class="prose-list">
+                <li>Garantizar el correcto funcionamiento técnico del sitio web.</li>
+                <li>Medir el rendimiento y uso de la plataforma para mejorar su contenido y experiencia de usuario.</li>
+                <li>Detectar y prevenir usos abusivos o accesos no autorizados (seguridad).</li>
+                <li>Cumplir con las obligaciones legales que resulten aplicables.</li>
+            </ul>
+            <p>Skilltree <strong>no vende, no cede ni comunica</strong> datos personales a terceros con fines comerciales o publicitarios.</p>
+        </div>
+    </section>
+
+    <!-- Conservación -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>¿Cuánto tiempo conservamos tus datos?</h2>
+        </div>
+        <div class="prose-card">
+            <p>Los registros de acceso (logs) generados por la infraestructura de Vercel se conservan durante un período máximo de <strong>30 días</strong>, tras lo cual son eliminados o anonimizados automáticamente según la política de retención del proveedor.</p>
+            <p>Los datos analíticos agregados, al no ser atribuibles a una persona física identificada, no están sujetos a plazos de supresión bajo el RGPD. Se conservan mientras sean necesarios para el análisis histórico del proyecto.</p>
+            <p>En cualquier caso, los datos se conservarán el tiempo estrictamente necesario para la finalidad para la que fueron recogidos y para el cumplimiento de las obligaciones legales vigentes.</p>
+        </div>
+    </section>
+
+    <!-- Derechos -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Tus derechos</h2>
+            <p>De acuerdo con el RGPD y la LOPDGDD, puedes ejercer en cualquier momento los siguientes derechos sobre tus datos personales:</p>
+        </div>
+
+        <ul class="rights-grid" role="list">
+            <li class="rights-card">
+                <span class="rights-card__letter" aria-hidden="true">A</span>
+                <h3 class="rights-card__title">Acceso</h3>
+                <p class="rights-card__desc">Derecho a obtener confirmación sobre si tratamos datos que te conciernen y a acceder a ellos.</p>
+            </li>
+            <li class="rights-card">
+                <span class="rights-card__letter" aria-hidden="true">R</span>
+                <h3 class="rights-card__title">Rectificación</h3>
+                <p class="rights-card__desc">Derecho a solicitar la corrección de datos inexactos o incompletos.</p>
+            </li>
+            <li class="rights-card">
+                <span class="rights-card__letter" aria-hidden="true">S</span>
+                <h3 class="rights-card__title">Supresión</h3>
+                <p class="rights-card__desc">Derecho al olvido: puedes solicitar la eliminación de tus datos cuando ya no sean necesarios.</p>
+            </li>
+            <li class="rights-card">
+                <span class="rights-card__letter" aria-hidden="true">L</span>
+                <h3 class="rights-card__title">Limitación</h3>
+                <p class="rights-card__desc">Derecho a solicitar que suspendamos el tratamiento de tus datos en determinadas circunstancias.</p>
+            </li>
+            <li class="rights-card">
+                <span class="rights-card__letter" aria-hidden="true">P</span>
+                <h3 class="rights-card__title">Portabilidad</h3>
+                <p class="rights-card__desc">Derecho a recibir tus datos en un formato estructurado, de uso común y lectura mecánica.</p>
+            </li>
+            <li class="rights-card">
+                <span class="rights-card__letter" aria-hidden="true">O</span>
+                <h3 class="rights-card__title">Oposición</h3>
+                <p class="rights-card__desc">Derecho a oponerte al tratamiento de tus datos cuando esté basado en nuestro interés legítimo.</p>
+            </li>
+        </ul>
+
+        <div class="prose-card" style="margin-top: 24px;">
+            <p>Para ejercer cualquiera de estos derechos, puedes contactarnos a través del repositorio del proyecto en <a href="https://github.com/johngvicent/skiltree" target="_blank" rel="noopener noreferrer">GitHub</a>. Responderemos en el plazo máximo de <strong>30 días naturales</strong>.</p>
+            <p>Si consideras que el tratamiento de tus datos infringe el RGPD, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
+        </div>
+    </section>
+
+    <!-- Terceros -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Proveedores externos y transferencias internacionales</h2>
+        </div>
+        <div class="prose-card">
+            <p>Skilltree utiliza los siguientes proveedores externos que pueden tratar datos relacionados con el servicio:</p>
+            <ul class="prose-list">
+                <li><strong>Vercel Inc.</strong> (EE. UU.) — infraestructura de alojamiento y despliegue. Las transferencias a EE. UU. se realizan al amparo del <em>EU-US Data Privacy Framework</em> y las Cláusulas Contractuales Tipo de la Comisión Europea.</li>
+                <li><strong>GitHub Inc.</strong> (EE. UU.) — repositorio de código fuente. Sujeto a las mismas garantías de transferencia internacional que Vercel.</li>
+                <li><strong>Google LLC</strong> (EE. UU.) — Google Fonts para la tipografía del sitio. No se transmiten datos de usuario a Google en el uso normal de la plataforma.</li>
+            </ul>
+            <p>Estos proveedores actúan como encargados del tratamiento y disponen de sus propias políticas de privacidad. Skilltree no cede datos a ningún otro tercero no mencionado en esta política.</p>
+        </div>
+    </section>
+
+    <!-- Menores -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Menores de edad</h2>
+        </div>
+        <div class="prose-card">
+            <p>Skilltree no está dirigido específicamente a menores de 14 años y no recoge de forma intencionada datos personales de este colectivo. Si eres padre, madre o tutor legal y crees que tu hijo/a menor de 14 años nos ha facilitado datos personales, ponte en contacto con nosotros a través del repositorio de GitHub para proceder a su eliminación.</p>
+        </div>
+    </section>
+
+    <!-- Actualizaciones -->
+    <section class="section-block">
+        <div class="section-header">
+            <h2>Cambios en esta política</h2>
+        </div>
+        <div class="prose-card">
+            <p>Skilltree se reserva el derecho a modificar la presente Política de Privacidad en cualquier momento para adaptarla a cambios legislativos, jurisprudenciales o en la propia plataforma. Los cambios serán publicados en esta misma página con la fecha de actualización revisada. Te recomendamos consultarla periódicamente.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-block">
+        <blockquote class="highlight-quote">
+            Tu privacidad es nuestra responsabilidad. Si tienes cualquier duda sobre esta política, contáctanos en <a href="https://github.com/johngvicent/skiltree" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </blockquote>
+    </section>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* ===== Page Hero ===== */
+    .page-hero {
+        text-align: center;
+        padding: 48px 20px 24px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+        color: #e0e0e0;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+    }
+
+    .page-hero__meta {
+        font-size: 0.85rem;
+        color: #606060;
+        letter-spacing: 0.03em;
+    }
+
+    /* ===== Section Block ===== */
+    .section-block {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 20px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        color: #e0e0e0;
+        margin-bottom: 16px;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+        color: #b0b0b0;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* ===== Prose Card ===== */
+    .prose-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        padding: 32px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .prose-card p {
+        color: #b0b0b0;
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 16px;
+    }
+
+    .prose-card p:last-child { margin-bottom: 0; }
+
+    .prose-card strong { color: #e0e0e0; }
+
+    .prose-card a,
+    .prose-card em {
+        color: #00d4ff;
+        text-decoration: none;
+        font-style: normal;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        transition: border-color 0.2s;
+    }
+
+    .prose-card a:hover { border-color: #00d4ff; }
+
+    /* ===== Prose List ===== */
+    .prose-list {
+        list-style: none;
+        margin: 0 0 16px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prose-list li {
+        color: #b0b0b0;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .prose-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #00d4ff;
+        font-size: 0.85rem;
+    }
+
+    .prose-list strong { color: #e0e0e0; }
+
+    .prose-list em {
+        color: #909090;
+        font-style: italic;
+    }
+
+    /* ===== Info Grid (responsable) ===== */
+    .info-grid {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 16px 32px;
+        border-bottom: 1px solid #222;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-row__label {
+        min-width: 120px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #00d4ff;
+        flex-shrink: 0;
+    }
+
+    .info-row__value {
+        color: #b0b0b0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .info-row__value a {
+        color: #00d4ff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        transition: border-color 0.2s;
+    }
+
+    .info-row__value a:hover { border-color: #00d4ff; }
+
+    /* ===== Privacy Grid (datos) ===== */
+    .privacy-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .privacy-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 10px;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow   0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .privacy-card:hover {
+        border-color: rgba(0, 212, 255, 0.35);
+        box-shadow: 0 4px 24px rgba(0, 212, 255, 0.07);
+        transform: translateY(-3px);
+    }
+
+    .privacy-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .privacy-card__icon svg { width: 22px; height: 22px; }
+
+    .privacy-card__icon--blue  { background: rgba(0, 212, 255, 0.1);  border: 1px solid rgba(0, 212, 255, 0.25);  color: #00d4ff; }
+    .privacy-card__icon--green { background: rgba(34, 197, 94, 0.1);  border: 1px solid rgba(34, 197, 94, 0.25);  color: #22c55e; }
+    .privacy-card__icon--yellow{ background: rgba(255, 200, 0, 0.1);  border: 1px solid rgba(255, 200, 0, 0.25);  color: #ffe066; }
+
+    .privacy-card__title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e0e0e0;
+        margin: 0;
+    }
+
+    .privacy-card__desc {
+        font-size: 0.875rem;
+        color: #909090;
+        line-height: 1.65;
+        margin: 0;
+        flex: 1;
+    }
+
+    .privacy-card__basis {
+        font-size: 0.75rem;
+        color: #505050;
+        border-top: 1px solid #252525;
+        padding-top: 10px;
+        margin-top: auto;
+        font-style: italic;
+    }
+
+    /* ===== Rights Grid ===== */
+    .rights-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .rights-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 10px;
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .rights-card:hover {
+        border-color: rgba(0, 212, 255, 0.35);
+        transform: translateY(-2px);
+    }
+
+    .rights-card__letter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: rgba(0, 212, 255, 0.08);
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        color: #00d4ff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        flex-shrink: 0;
+    }
+
+    .rights-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #e0e0e0;
+        margin: 0;
+    }
+
+    .rights-card__desc {
+        font-size: 0.825rem;
+        color: #909090;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* ===== Blockquote ===== */
+    .highlight-quote {
+        text-align: center;
+        font-size: 1.05rem;
+        font-style: italic;
+        color: #b0b0b0;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px 32px;
+        border-left: 3px solid #00d4ff;
+        background: rgba(0, 212, 255, 0.05);
+        border-radius: 0 8px 8px 0;
+        line-height: 1.7;
+    }
+
+    .highlight-quote a {
+        color: #00d4ff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .highlight-quote a:hover { border-color: #00d4ff; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+        .privacy-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .rights-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-hero {
+            padding: 32px 16px 16px;
+        }
+
+        .page-hero h1 {
+            font-size: 1.75rem;
+        }
+
+        .section-block {
+            padding: 32px 16px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .prose-card {
+            padding: 24px 20px;
+        }
+
+        .info-row {
+            flex-direction: column;
+            gap: 4px;
+            padding: 16px 20px;
+        }
+
+        .info-row__label {
+            min-width: unset;
+        }
+
+        .highlight-quote {
+            font-size: 0.95rem;
+            padding: 20px 24px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .rights-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
