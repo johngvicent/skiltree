@@ -50,12 +50,15 @@ const hasChildren = node.children && node.children.length > 0;
       margin: 20px 0;
       color: #e0e0e0;
       font-family: 'Segoe UI', sans-serif;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .roadmap-path {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      min-width: max-content;
     }
 
     .roadmap-item {

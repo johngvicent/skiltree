@@ -115,7 +115,56 @@ import Button from '../components/Button.astro';
         </blockquote>
     </section>
 
+    <!-- DoD Section -->
+    <section class="section-block dod-section" aria-labelledby="dod-title">
+        <div class="section-header">
+            <span class="dod-badge">Definition of Done</span>
+            <h2 id="dod-title">Nuestro Estándar de Calidad (DoD)</h2>
+            <p>Cada funcionalidad entregada en Skiltree cumple con los siguientes criterios antes de considerarse terminada.</p>
+        </div>
+
+        <ul class="dod-grid" role="list">
+            <li class="dod-card">
+                <div class="dod-card__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 class="dod-card__title">Código</h3>
+                <p class="dod-card__desc">Revisado en GitHub y libre de errores detectados en VS Code.</p>
+            </li>
+            <li class="dod-card">
+                <div class="dod-card__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 class="dod-card__title">UX / UI</h3>
+                <p class="dod-card__desc">Diseño 100% responsive y accesibilidad validada en todos los dispositivos.</p>
+            </li>
+            <li class="dod-card">
+                <div class="dod-card__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 class="dod-card__title">Deploy</h3>
+                <p class="dod-card__desc">Despliegue exitoso en Vercel sin errores de consola en producción.</p>
+            </li>
+            <li class="dod-card">
+                <div class="dod-card__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 class="dod-card__title">Validación</h3>
+                <p class="dod-card__desc">Aprobación final por el Product Owner, Pedro Vial, antes del cierre del Sprint.</p>
+            </li>
+        </ul>
+    </section>
+
     <Footer />
+
+    <!-- Image Modal -->
+    <div id="img-modal" class="img-modal" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+        <button class="img-modal__close" id="img-modal-close" aria-label="Cerrar">&times;</button>
+        <div class="img-modal__backdrop" id="img-modal-backdrop"></div>
+        <div class="img-modal__content">
+            <img id="img-modal-img" src="" alt="" />
+        </div>
+    </div>
 </Layout>
 
 <style>
@@ -216,6 +265,7 @@ import Button from '../components/Button.astro';
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: zoom-in;
     }
 
     .tool-card__figure img:hover {
@@ -264,6 +314,7 @@ import Button from '../components/Button.astro';
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: zoom-in;
     }
 
     .section-figure img:hover {
@@ -287,6 +338,171 @@ import Button from '../components/Button.astro';
         background: rgba(0, 212, 255, 0.05);
         border-radius: 0 8px 8px 0;
         line-height: 1.7;
+    }
+
+    /* ===== DoD Section ===== */
+    .dod-section {
+        border-top: 1px solid #2a2a2a;
+    }
+
+    .dod-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #00d4ff;
+        background: rgba(0, 212, 255, 0.08);
+        border: 1px solid rgba(0, 212, 255, 0.25);
+        border-radius: 20px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+    }
+
+    .dod-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .dod-card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 10px;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow   0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dod-card:hover {
+        border-color: rgba(0, 212, 255, 0.45);
+        box-shadow: 0 4px 24px rgba(0, 212, 255, 0.08);
+        transform: translateY(-3px);
+    }
+
+    .dod-card__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #22c55e;
+    }
+
+    .dod-card__icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dod-card__title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e0e0e0;
+        letter-spacing: 0.01em;
+        margin: 0;
+    }
+
+    .dod-card__desc {
+        font-size: 0.875rem;
+        color: #909090;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    @media (max-width: 900px) {
+        .dod-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .dod-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===== Image Modal ===== */
+    .img-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-modal.is-open {
+        display: flex;
+    }
+
+    .img-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.88);
+        cursor: zoom-out;
+    }
+
+    .img-modal__content {
+        position: relative;
+        z-index: 1;
+        max-width: 1500px;
+        width: 95vw;
+        max-height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-modal__content img {
+        max-width: 100%;
+        max-height: 92vh;
+        border-radius: 8px;
+        box-shadow: 0 8px 48px rgba(0, 0, 0, 0.7);
+        display: block;
+        object-fit: contain;
+        animation: modal-zoom-in 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes modal-zoom-in {
+        from { opacity: 0; transform: scale(0.93); }
+        to   { opacity: 1; transform: scale(1); }
+    }
+
+    .img-modal__close {
+        position: fixed;
+        top: 18px;
+        right: 22px;
+        z-index: 2;
+        background: rgba(0,0,0,0.55);
+        border: 1px solid rgba(255,255,255,0.15);
+        color: #e0e0e0;
+        font-size: 2rem;
+        line-height: 1;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .img-modal__close:hover {
+        background: #00d4ff;
+        color: #000;
+        border-color: #00d4ff;
     }
 
     /* ===== Responsive ===== */
@@ -326,3 +542,37 @@ import Button from '../components/Button.astro';
         }
     }
 </style>
+
+<script>
+    const modal      = document.getElementById('img-modal')!;
+    const modalImg   = document.getElementById('img-modal-img') as HTMLImageElement;
+    const closeBtn   = document.getElementById('img-modal-close')!;
+    const backdrop   = document.getElementById('img-modal-backdrop')!;
+
+    function openModal(src: string, alt: string) {
+        modalImg.src = src;
+        modalImg.alt = alt;
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        setTimeout(() => { modalImg.src = ''; }, 300);
+    }
+
+    // Attach click to all images inside tool cards and section figures
+    document.querySelectorAll<HTMLImageElement>(
+        '.tool-card__figure img, .section-figure img'
+    ).forEach(img => {
+        img.addEventListener('click', () => openModal(img.src, img.alt));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+</script>
